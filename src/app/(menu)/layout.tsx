@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "2R Fusion Menu",
-  description: "Explore our premium dining menu",
+  title: "Menu 2R Fusion",
+  description: "Découvrez notre menu gastronomique premium",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -17,7 +17,7 @@ export default function MenuLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <meta
           name="viewport"

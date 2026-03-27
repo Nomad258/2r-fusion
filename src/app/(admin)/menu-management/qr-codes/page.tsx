@@ -86,7 +86,7 @@ export default function QRCodesPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <p className="text-stone-400">Loading tables...</p>
+        <p className="text-stone-400">Chargement des tables...</p>
       </div>
     );
   }
@@ -96,9 +96,9 @@ export default function QRCodesPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-light text-stone-100">QR Menu Codes</h1>
+          <h1 className="text-3xl font-light text-stone-100">Codes QR Menu</h1>
           <p className="text-stone-400 text-sm mt-1">
-            Manage and print table menu QR codes
+            Gérer et imprimer les codes QR table pour menu
           </p>
         </div>
         <Button
@@ -107,7 +107,7 @@ export default function QRCodesPage() {
           className="gap-2 print:hidden"
         >
           <Printer className="h-4 w-4" />
-          Print All
+          Imprimer Tout
         </Button>
       </div>
 
@@ -141,7 +141,7 @@ export default function QRCodesPage() {
               </h3>
               <div className="flex gap-2 justify-center mt-2">
                 <Badge variant="outline" className="text-xs">
-                  Capacity: {table.capacity}
+                  Capacité: {table.capacity}
                 </Badge>
                 <Badge
                   variant="outline"
@@ -182,7 +182,7 @@ export default function QRCodesPage() {
                 className="w-full gap-2 text-xs"
               >
                 <Download className="h-3 w-3" />
-                Download PNG
+                Télécharger PNG
               </Button>
               <Button
                 onClick={() => copyToClipboard(generateQRUrl(table.id))}
@@ -191,7 +191,7 @@ export default function QRCodesPage() {
                 className="w-full gap-2 text-xs"
               >
                 <Copy className="h-3 w-3" />
-                Copy Link
+                Copier Lien
               </Button>
             </div>
           </Card>
@@ -200,7 +200,7 @@ export default function QRCodesPage() {
 
       {filteredTables.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-stone-400">No tables found for selected venue</p>
+          <p className="text-stone-400">Aucune table trouvée pour ce lieu</p>
         </div>
       )}
 

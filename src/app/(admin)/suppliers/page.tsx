@@ -79,8 +79,8 @@ export default function SuppliersPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Suppliers"
-        description="Manage supplier relationships and performance"
+        title="Fournisseurs"
+        description="Gérer les relations et les performances des fournisseurs"
       />
 
       {/* Summary Cards */}
@@ -89,7 +89,7 @@ export default function SuppliersPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Active Suppliers</p>
+                <p className="text-sm text-stone-400 mb-1">Fournisseurs Actifs</p>
                 <p className="text-3xl font-semibold text-stone-100">5</p>
               </div>
               <Package className="h-6 w-6 text-amber-400" />
@@ -99,16 +99,16 @@ export default function SuppliersPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Avg Rating</p>
+              <p className="text-sm text-stone-400 mb-1">Note Moyenne</p>
               <p className="text-3xl font-semibold text-amber-400">4.54</p>
-              <p className="text-xs text-stone-400 mt-2">out of 5</p>
+              <p className="text-xs text-stone-400 mt-2">sur 5</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Total Products</p>
+              <p className="text-sm text-stone-400 mb-1">Total Produits</p>
               <p className="text-3xl font-semibold text-stone-100">46</p>
               <p className="text-xs text-stone-400 mt-2">SKUs</p>
             </div>
@@ -117,9 +117,9 @@ export default function SuppliersPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Active POs</p>
+              <p className="text-sm text-stone-400 mb-1">Commandes Actives</p>
               <p className="text-3xl font-semibold text-stone-100">7</p>
-              <p className="text-xs text-stone-400 mt-2">Purchase orders</p>
+              <p className="text-xs text-stone-400 mt-2">commandes d&apos;achat</p>
             </div>
           </CardContent>
         </Card>
@@ -131,15 +131,15 @@ export default function SuppliersPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Suppliers
+                Rechercher Fournisseurs
               </label>
               <Input
-                placeholder="Search by name or contact..."
+                placeholder="Rechercher par nom ou contact..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              + Add Supplier
+              + Ajouter Fournisseur
             </Button>
           </div>
         </CardContent>
@@ -148,19 +148,19 @@ export default function SuppliersPage() {
       {/* Suppliers Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">All Suppliers</CardTitle>
+          <CardTitle className="text-stone-100">Tous les Fournisseurs</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Supplier</TableHead>
+                  <TableHead className="text-stone-400">Fournisseur</TableHead>
                   <TableHead className="text-stone-400">Contact</TableHead>
-                  <TableHead className="text-stone-400">Rating</TableHead>
-                  <TableHead className="text-stone-400">Reliability</TableHead>
-                  <TableHead className="text-stone-400">Products</TableHead>
-                  <TableHead className="text-stone-400">Active POs</TableHead>
+                  <TableHead className="text-stone-400">Note</TableHead>
+                  <TableHead className="text-stone-400">Fiabilité</TableHead>
+                  <TableHead className="text-stone-400">Produits</TableHead>
+                  <TableHead className="text-stone-400">Commandes Actives</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -210,7 +210,7 @@ export default function SuppliersPage() {
                         size="sm"
                         className="text-amber-400 hover:text-amber-300"
                       >
-                        View
+                        Voir
                       </Button>
                     </TableCell>
                   </TableRow>

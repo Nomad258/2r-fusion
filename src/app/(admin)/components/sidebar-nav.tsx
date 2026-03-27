@@ -26,47 +26,47 @@ interface SidebarNavProps {
 
 const navSections = [
   {
-    title: "Overview",
+    title: "Vue d&apos;ensemble",
     items: [
-      { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+      { label: "Tableau de Bord", href: "/dashboard", icon: LayoutDashboard },
     ],
   },
   {
-    title: "Operations",
+    title: "Opérations",
     items: [
-      { label: "Orders", href: "/orders", icon: UtensilsCrossed },
-      { label: "Reservations", href: "/reservations", icon: Calendar },
-      { label: "Guests / CRM", href: "/guests", icon: Users },
+      { label: "Commandes", href: "/orders", icon: UtensilsCrossed },
+      { label: "Réservations", href: "/reservations", icon: Calendar },
+      { label: "Clients / CRM", href: "/guests", icon: Users },
     ],
   },
   {
-    title: "Menu & Kitchen",
+    title: "Menu & Cuisine",
     items: [
-      { label: "Menu Management", href: "/menu-management", icon: BookOpen },
-      { label: "QR Codes", href: "/menu-management/qr-codes", icon: QrCode },
+      { label: "Gestion du Menu", href: "/menu-management", icon: BookOpen },
+      { label: "Codes QR", href: "/menu-management/qr-codes", icon: QrCode },
     ],
   },
   {
-    title: "Supply Chain",
+    title: "Chaîne d&apos;Approvisionnement",
     items: [
-      { label: "Inventory", href: "/inventory", icon: Package },
-      { label: "Suppliers", href: "/suppliers", icon: Truck },
-      { label: "Invoices", href: "/invoices", icon: FileText },
+      { label: "Inventaire", href: "/inventory", icon: Package },
+      { label: "Fournisseurs", href: "/suppliers", icon: Truck },
+      { label: "Factures", href: "/invoices", icon: FileText },
     ],
   },
   {
     title: "Intelligence",
     items: [
-      { label: "Forecasts", href: "/forecasts", icon: TrendingUp },
+      { label: "Prévisions", href: "/forecasts", icon: TrendingUp },
       { label: "Anomalies", href: "/anomalies", icon: Shield },
-      { label: "Alerts", href: "/alerts", icon: Bell },
+      { label: "Alertes", href: "/alerts", icon: Bell },
     ],
   },
   {
-    title: "Management",
+    title: "Gestion",
     items: [
-      { label: "Employees", href: "/employees", icon: Users2 },
-      { label: "Settings", href: "/settings", icon: Settings },
+      { label: "Employés", href: "/employees", icon: Users2 },
+      { label: "Paramètres", href: "/settings", icon: Settings },
     ],
   },
 ];

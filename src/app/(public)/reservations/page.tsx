@@ -24,16 +24,16 @@ type ReservationForm = {
 
 const serviceMoments = [
   "Confirmation prioritaire sous 2 heures",
-  "Tables signatures et salons selon disponibilite",
-  "Attention speciale pour anniversaires et occasions privees",
+  "Tables signatures et salons selon disponibilité",
+  "Attention spéciale pour anniversaires et occasions privées",
 ];
 
 const occasionOptions = [
-  "Diner signature",
+  "Dîner signature",
   "Anniversaire",
-  "Business dinner",
+  "Dîner d&apos;affaires",
   "Demande en mariage",
-  "Celebration privee",
+  "Célébration privée",
 ];
 
 const timeOptions = [
@@ -60,7 +60,7 @@ export default function ReservationsPage() {
     date: "",
     time: "20:00",
     partySize: "2",
-    occasion: "Diner signature",
+    occasion: "Dîner signature",
     specialRequests: "",
   });
 
@@ -90,18 +90,15 @@ export default function ReservationsPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-14 lg:flex-row lg:items-start">
           <div className="max-w-2xl space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-amber-400/20 bg-amber-400/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-amber-300">
-              Reservation Concierge
+              Conciergerie Réservation
             </div>
             <div className="space-y-5">
               <h1 className="font-heading text-5xl font-semibold leading-tight md:text-7xl">
-                Reserver une
+                Réservez une
                 <span className="block text-amber-400">table d&apos;exception</span>
               </h1>
               <p className="max-w-xl text-base leading-8 text-stone-300 md:text-lg">
-                Une experience premium a Tanger, pensee pour les diners
-                signatures, les rendez-vous d&apos;affaires et les grandes
-                celebrations. Remplissez votre demande et notre equipe vous
-                recontacte rapidement.
+                Une expérience premium à Tanger, pensée pour les dîners signatures, les rendez-vous d&apos;affaires et les grandes célébrations. Remplissez votre demande et notre équipe vous recontacte rapidement.
               </p>
             </div>
 
@@ -123,22 +120,21 @@ export default function ReservationsPage() {
               <div className="mb-8 flex items-start justify-between gap-6 border-b border-stone-800 pb-6">
                 <div>
                   <p className="text-sm uppercase tracking-[0.28em] text-amber-300">
-                    Demande de reservation
+                    Demande de réservation
                   </p>
                   <h2 className="mt-3 text-2xl font-semibold text-stone-50">
                     Planifiez votre venue
                   </h2>
                 </div>
                 <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-4 py-2 text-xs text-amber-200">
-                  Reponse rapide
+                  Réponse rapide
                 </div>
               </div>
 
               {submitted && (
                 <div className="mb-8 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-100">
-                  Merci {form.guestName || "pour votre demande"}. Nous avons
-                  bien recu votre reservation pour le {form.date || "jour choisi"}{" "}
-                  a {form.time}, pour {form.partySize} convive(s).
+                  Merci {form.guestName || "pour votre demande"}. Nous avons bien reçu votre réservation pour le {form.date || "jour choisi"}{" "}
+                  à {form.time}, pour {form.partySize} convive(s).
                 </div>
               )}
 
@@ -181,7 +177,7 @@ export default function ReservationsPage() {
 
                   <label className="space-y-3">
                     <span className="text-xs uppercase tracking-[0.24em] text-stone-400">
-                      Telephone
+                      Téléphone
                     </span>
                     <div className="flex items-center gap-3 rounded-2xl border border-stone-800 bg-stone-950 px-4 py-3 focus-within:border-amber-400/50">
                       <Phone className="h-4 w-4 text-amber-400" />
@@ -284,7 +280,7 @@ export default function ReservationsPage() {
 
                   <label className="space-y-3">
                     <span className="text-xs uppercase tracking-[0.24em] text-stone-400">
-                      Demandes speciales
+                      Demandes spéciales
                     </span>
                     <div className="flex gap-3 rounded-2xl border border-stone-800 bg-stone-950 px-4 py-3 focus-within:border-amber-400/50">
                       <MessageSquare className="mt-1 h-4 w-4 text-amber-400" />
@@ -294,7 +290,7 @@ export default function ReservationsPage() {
                         onChange={(event) =>
                           updateField("specialRequests", event.target.value)
                         }
-                        placeholder="Allergies, preferences de table, mise en scene anniversaire, besoins professionnels..."
+                        placeholder="Allergies, préférences de table, mise en scène anniversaire, besoins professionnels..."
                         className="w-full resize-none bg-transparent text-sm text-stone-100 outline-none placeholder:text-stone-500"
                       />
                     </div>
@@ -303,8 +299,7 @@ export default function ReservationsPage() {
 
                 <div className="flex flex-col gap-4 border-t border-stone-800 pt-6 md:flex-row md:items-center md:justify-between">
                   <p className="max-w-md text-sm leading-6 text-stone-400">
-                    Pour les groupes de plus de 10 personnes, notre equipe
-                    evenements vous contactera pour un accompagnement dedie.
+                    Pour les groupes de plus de 10 personnes, notre équipe événements vous contactera pour un accompagnement dédié.
                   </p>
                   <button
                     type="submit"

@@ -63,7 +63,7 @@ const paymentHistory = [
     method: "BANK_TRANSFER",
     reference: "TRF-2026-00947",
     recordedBy: "Nadia Saadi",
-    notes: "Full payment processed",
+    notes: "Paiement complet effectué",
   },
 ];
 
@@ -73,21 +73,21 @@ const auditTrail = [
     timestamp: "2026-03-27 14:30",
     action: "PAYMENT_RECORDED",
     user: "Nadia Saadi",
-    details: "Full payment of 3600.00 MAD received",
+    details: "Paiement complet de 3600.00 MAD reçu",
   },
   {
     id: "2",
     timestamp: "2026-03-25 10:15",
     action: "INVOICE_APPROVED",
     user: "Mohammad Khaldi",
-    details: "Invoice approved for payment",
+    details: "Facture approuvée pour paiement",
   },
   {
     id: "3",
     timestamp: "2026-03-25 09:45",
     action: "INVOICE_CREATED",
     user: "System",
-    details: "Invoice generated from PO-2026-0485",
+    details: "Facture générée à partir de PO-2026-0485",
   },
 ];
 
@@ -103,7 +103,7 @@ export default function InvoiceDetailPage({
     <div className="space-y-6">
       <PageHeader
         title={invoiceData.invoiceNumber}
-        description={`Invoice from ${invoiceData.supplier.name}`}
+        description={`Facture de ${invoiceData.supplier.name}`}
       />
 
       {/* Invoice Header */}
@@ -111,9 +111,9 @@ export default function InvoiceDetailPage({
         <CardHeader>
           <div className="flex items-start justify-between">
             <div>
-              <CardTitle className="text-stone-100">Invoice Details</CardTitle>
+              <CardTitle className="text-stone-100">Détails de la Facture</CardTitle>
               <p className="text-xs text-stone-400 mt-1">
-                Supplier invoice and payment tracking
+                Facture fournisseur et suivi des paiements
               </p>
             </div>
             <div className="flex gap-2">
@@ -128,7 +128,7 @@ export default function InvoiceDetailPage({
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-stone-400 mb-1">Supplier</p>
+                <p className="text-xs text-stone-400 mb-1">Fournisseur</p>
                 <p className="text-stone-100 font-medium">
                   {invoiceData.supplier.name}
                 </p>
@@ -137,14 +137,14 @@ export default function InvoiceDetailPage({
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Related PO</p>
+                <p className="text-xs text-stone-400 mb-1">Commande d&apos;Achat Associée</p>
                 <p className="text-amber-400 font-mono">
                   {invoiceData.purchaseOrder}
                 </p>
               </div>
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <Calendar className="h-4 w-4" /> Created Date
+                  <Calendar className="h-4 w-4" /> Date de Création
                 </p>
                 <p className="text-stone-100">{invoiceData.createdDate}</p>
               </div>
@@ -152,7 +152,7 @@ export default function InvoiceDetailPage({
             <div className="space-y-4">
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <Clock className="h-4 w-4" /> Due Date
+                  <Clock className="h-4 w-4" /> Date d&apos;Échéance
                 </p>
                 <p className="text-stone-100 font-medium">
                   {invoiceData.dueDate}
@@ -160,14 +160,14 @@ export default function InvoiceDetailPage({
               </div>
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4" /> Paid Date
+                  <CheckCircle className="h-4 w-4" /> Date de Paiement
                 </p>
                 <p className="text-emerald-400 font-medium">
                   {invoiceData.paidDate}
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Approved By</p>
+                <p className="text-xs text-stone-400 mb-1">Approuvé Par</p>
                 <p className="text-stone-100">
                   {invoiceData.approvedBy}
                 </p>
@@ -183,7 +183,7 @@ export default function InvoiceDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Subtotal</p>
+              <p className="text-xs text-stone-400 mb-1">Sous-total</p>
               <p className="text-2xl font-semibold text-stone-100">
                 {invoiceData.subtotal.toFixed(2)}
               </p>
@@ -194,7 +194,7 @@ export default function InvoiceDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Tax (20%)</p>
+              <p className="text-xs text-stone-400 mb-1">TVA (20%)</p>
               <p className="text-2xl font-semibold text-stone-100">
                 {invoiceData.taxAmount.toFixed(2)}
               </p>
@@ -205,7 +205,7 @@ export default function InvoiceDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Total Amount</p>
+              <p className="text-xs text-stone-400 mb-1">Montant Total</p>
               <p className="text-2xl font-semibold text-amber-400">
                 {invoiceData.totalAmount.toFixed(2)}
               </p>
@@ -216,7 +216,7 @@ export default function InvoiceDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Remaining</p>
+              <p className="text-xs text-stone-400 mb-1">Restant</p>
               <p
                 className={`text-2xl font-semibold ${
                   remainingBalance > 0 ? "text-red-400" : "text-emerald-400"
@@ -233,12 +233,12 @@ export default function InvoiceDetailPage({
       {/* Payment Progress */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Payment Status</CardTitle>
+          <CardTitle className="text-stone-100">Statut du Paiement</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
             <div className="flex justify-between mb-2">
-              <span className="text-sm text-stone-400">Payment Progress</span>
+              <span className="text-sm text-stone-400">Progression du Paiement</span>
               <span className="text-sm font-medium text-stone-100">
                 {paymentProgress.toFixed(0)}%
               </span>
@@ -254,21 +254,21 @@ export default function InvoiceDetailPage({
           </div>
           <div className="grid gap-3 md:grid-cols-3 mt-4">
             <div className="bg-stone-800/50 rounded p-3">
-              <p className="text-xs text-stone-400">Paid Amount</p>
+              <p className="text-xs text-stone-400">Montant Payé</p>
               <p className="text-lg font-semibold text-emerald-400">
                 {invoiceData.paidAmount.toFixed(2)} MAD
               </p>
             </div>
             <div className="bg-stone-800/50 rounded p-3">
-              <p className="text-xs text-stone-400">Outstanding</p>
+              <p className="text-xs text-stone-400">En Attente</p>
               <p className={`text-lg font-semibold ${remainingBalance > 0 ? "text-red-400" : "text-emerald-400"}`}>
                 {remainingBalance.toFixed(2)} MAD
               </p>
             </div>
             <div className="bg-stone-800/50 rounded p-3">
-              <p className="text-xs text-stone-400">Payment Days</p>
+              <p className="text-xs text-stone-400">Jours de Paiement</p>
               <p className="text-lg font-semibold text-stone-100">
-                {invoiceData.paidDate ? "2 days" : "Pending"}
+                {invoiceData.paidDate ? "2 jours" : "En Attente"}
               </p>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function InvoiceDetailPage({
         <CardHeader>
           <CardTitle className="text-stone-100 flex items-center gap-2">
             <FileText className="h-5 w-5" />
-            Line Items
+            Éléments de Facture
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -288,10 +288,10 @@ export default function InvoiceDetailPage({
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Item</TableHead>
-                  <TableHead className="text-stone-400">Quantity</TableHead>
-                  <TableHead className="text-stone-400">Unit Price</TableHead>
-                  <TableHead className="text-stone-400">Amount</TableHead>
+                  <TableHead className="text-stone-400">Article</TableHead>
+                  <TableHead className="text-stone-400">Quantité</TableHead>
+                  <TableHead className="text-stone-400">Prix Unitaire</TableHead>
+                  <TableHead className="text-stone-400">Montant</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -314,7 +314,7 @@ export default function InvoiceDetailPage({
                 ))}
                 <TableRow className="border-stone-700 bg-stone-800/50">
                   <TableCell colSpan={3} className="text-right text-stone-400">
-                    Subtotal:
+                    Sous-total:
                   </TableCell>
                   <TableCell className="font-semibold text-stone-100">
                     {invoiceData.subtotal.toFixed(2)} MAD
@@ -322,7 +322,7 @@ export default function InvoiceDetailPage({
                 </TableRow>
                 <TableRow className="border-stone-700 bg-stone-800/50">
                   <TableCell colSpan={3} className="text-right text-stone-400">
-                    Tax (20%):
+                    TVA (20%):
                   </TableCell>
                   <TableCell className="font-semibold text-stone-100">
                     {invoiceData.taxAmount.toFixed(2)} MAD
@@ -345,7 +345,7 @@ export default function InvoiceDetailPage({
       {/* Payment History */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Payment History</CardTitle>
+          <CardTitle className="text-stone-100">Historique des Paiements</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -366,10 +366,10 @@ export default function InvoiceDetailPage({
                   </Badge>
                 </div>
                 <p className="text-sm text-stone-400">
-                  Ref: <span className="font-mono text-stone-300">{payment.reference}</span>
+                  Réf: <span className="font-mono text-stone-300">{payment.reference}</span>
                 </p>
                 <p className="text-sm text-stone-400 mt-1">
-                  Recorded by {payment.recordedBy}
+                  Enregistré par {payment.recordedBy}
                 </p>
                 {payment.notes && (
                   <p className="text-sm text-stone-300 mt-2">{payment.notes}</p>
@@ -383,7 +383,7 @@ export default function InvoiceDetailPage({
       {/* Audit Trail */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Audit Trail</CardTitle>
+          <CardTitle className="text-stone-100">Journal d&apos;Audit</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -401,7 +401,7 @@ export default function InvoiceDetailPage({
                   </p>
                   <p className="text-xs text-stone-400">{entry.timestamp}</p>
                   <p className="text-sm text-stone-300 mt-1">{entry.details}</p>
-                  <p className="text-xs text-stone-500 mt-1">by {entry.user}</p>
+                  <p className="text-xs text-stone-500 mt-1">par {entry.user}</p>
                 </div>
               </div>
             ))}
@@ -411,17 +411,17 @@ export default function InvoiceDetailPage({
 
       {/* Action Buttons */}
       <div className="flex gap-3 pt-4">
-        <Button className="bg-amber-600 hover:bg-amber-700">Download PDF</Button>
+        <Button className="bg-amber-600 hover:bg-amber-700">Télécharger PDF</Button>
         {remainingBalance > 0 && (
           <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-            Record Payment
+            Enregistrer Paiement
           </Button>
         )}
         <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-          View Purchase Order
+          Voir Commande d&apos;Achat
         </Button>
         <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-          Send Email
+          Envoyer Email
         </Button>
       </div>
     </div>

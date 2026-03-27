@@ -135,8 +135,8 @@ export default function ReservationsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Reservations"
-        description="Manage guest reservations and seating"
+        title="Réservations"
+        description="Gérer les réservations des clients et la disposition des tables"
       />
 
       {/* Summary Cards */}
@@ -145,7 +145,7 @@ export default function ReservationsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Today&apos;s Bookings</p>
+                <p className="text-sm text-stone-400 mb-1">Réservations Aujourd&apos;hui</p>
                 <p className="text-3xl font-semibold text-stone-100">8</p>
               </div>
               <Calendar className="h-6 w-6 text-amber-400" />
@@ -156,7 +156,7 @@ export default function ReservationsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Total Covers</p>
+                <p className="text-sm text-stone-400 mb-1">Total des Couverts</p>
                 <p className="text-3xl font-semibold text-stone-100">29</p>
               </div>
               <Users className="h-6 w-6 text-amber-400" />
@@ -167,7 +167,7 @@ export default function ReservationsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Seated Now</p>
+                <p className="text-sm text-stone-400 mb-1">Actuellement Assis</p>
                 <p className="text-3xl font-semibold text-stone-100">2</p>
               </div>
               <Clock className="h-6 w-6 text-amber-400" />
@@ -178,7 +178,7 @@ export default function ReservationsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">VIP Bookings</p>
+                <p className="text-sm text-stone-400 mb-1">Réservations VIP</p>
                 <p className="text-3xl font-semibold text-stone-100">3</p>
               </div>
               <Badge className="bg-amber-900/30 text-amber-200">VIP</Badge>
@@ -193,32 +193,32 @@ export default function ReservationsPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Reservations
+                Rechercher Réservations
               </label>
               <Input
-                placeholder="Search by guest name, phone, or email..."
+                placeholder="Rechercher par nom, téléphone ou email..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <div className="w-full md:w-48">
               <label className="text-sm text-stone-400 block mb-2">
-                Status
+                Statut
               </label>
               <Select defaultValue="all">
                 <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-800 border-stone-700">
-                  <SelectItem value="all">All</SelectItem>
-                  <SelectItem value="confirmed">Confirmed</SelectItem>
-                  <SelectItem value="seated">Seated</SelectItem>
-                  <SelectItem value="completed">Completed</SelectItem>
-                  <SelectItem value="no-show">No Show</SelectItem>
+                  <SelectItem value="all">Tous</SelectItem>
+                  <SelectItem value="confirmed">Confirmé</SelectItem>
+                  <SelectItem value="seated">Assis</SelectItem>
+                  <SelectItem value="completed">Terminé</SelectItem>
+                  <SelectItem value="no-show">Absent</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              + New Reservation
+              + Nouvelle Réservation
             </Button>
           </div>
         </CardContent>
@@ -227,20 +227,20 @@ export default function ReservationsPage() {
       {/* Reservations Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">All Reservations</CardTitle>
+          <CardTitle className="text-stone-100">Toutes les Réservations</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Guest</TableHead>
+                  <TableHead className="text-stone-400">Client</TableHead>
                   <TableHead className="text-stone-400">Contact</TableHead>
-                  <TableHead className="text-stone-400">Party</TableHead>
-                  <TableHead className="text-stone-400">Time</TableHead>
+                  <TableHead className="text-stone-400">Groupe</TableHead>
+                  <TableHead className="text-stone-400">Heure</TableHead>
                   <TableHead className="text-stone-400">Table</TableHead>
                   <TableHead className="text-stone-400">Occasion</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -284,7 +284,7 @@ export default function ReservationsPage() {
                           size="sm"
                           className="text-amber-400 hover:text-amber-300"
                         >
-                          Edit
+                          Modifier
                         </Button>
                         {res.status === "CONFIRMED" && (
                           <Button
@@ -292,7 +292,7 @@ export default function ReservationsPage() {
                             size="sm"
                             className="text-emerald-400 hover:text-emerald-300"
                           >
-                            Seat
+                            Asseoir
                           </Button>
                         )}
                       </div>

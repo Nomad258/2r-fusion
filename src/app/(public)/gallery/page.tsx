@@ -6,26 +6,26 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Camera } from "lucide-react";
 
-const categories = ["All", "Interior", "Cuisine", "Atmosphere", "Events"];
+const categories = ["Tous", "Intérieur", "Cuisine", "Ambiance", "Événements"];
 
 const galleryItems = [
-  { id: 1, title: "The Main Dining Room", category: "Interior", gradient: "from-stone-800 via-amber-900/30 to-stone-900", aspect: "aspect-[4/5]" },
+  { id: 1, title: "La Salle Principale", category: "Intérieur", gradient: "from-stone-800 via-amber-900/30 to-stone-900", aspect: "aspect-[4/5]" },
   { id: 2, title: "Wagyu Tataki", category: "Cuisine", gradient: "from-amber-900/40 via-stone-800 to-stone-900", aspect: "aspect-square" },
-  { id: 3, title: "Sunset Over the Terrace", category: "Atmosphere", gradient: "from-orange-900/30 via-stone-800 to-amber-900/20", aspect: "aspect-[4/5]" },
-  { id: 4, title: "Private Celebration", category: "Events", gradient: "from-stone-800 via-stone-700 to-amber-900/20", aspect: "aspect-square" },
-  { id: 5, title: "Truffle Risotto al Dente", category: "Cuisine", gradient: "from-amber-800/30 via-stone-900 to-stone-800", aspect: "aspect-square" },
-  { id: 6, title: "Ocean View Lounge", category: "Interior", gradient: "from-stone-900 via-cyan-900/10 to-stone-800", aspect: "aspect-[4/5]" },
-  { id: 7, title: "Omakase Platter", category: "Cuisine", gradient: "from-red-900/20 via-stone-900 to-amber-900/10", aspect: "aspect-[4/5]" },
-  { id: 8, title: "Candlelit Evening", category: "Atmosphere", gradient: "from-amber-900/40 via-orange-900/20 to-stone-900", aspect: "aspect-square" },
-  { id: 9, title: "The Zen Room", category: "Interior", gradient: "from-stone-700 via-stone-900 to-stone-800", aspect: "aspect-square" },
-  { id: 10, title: "Corporate Dinner", category: "Events", gradient: "from-stone-800 via-amber-800/20 to-stone-900", aspect: "aspect-[4/5]" },
-  { id: 11, title: "Miso-Glazed Branzino", category: "Cuisine", gradient: "from-stone-900 via-amber-900/20 to-stone-800", aspect: "aspect-square" },
-  { id: 12, title: "Golden Hour", category: "Atmosphere", gradient: "from-yellow-900/20 via-amber-900/30 to-stone-900", aspect: "aspect-[4/5]" },
+  { id: 3, title: "Coucher de Soleil sur la Terrasse", category: "Ambiance", gradient: "from-orange-900/30 via-stone-800 to-amber-900/20", aspect: "aspect-[4/5]" },
+  { id: 4, title: "Célébration Privée", category: "Événements", gradient: "from-stone-800 via-stone-700 to-amber-900/20", aspect: "aspect-square" },
+  { id: 5, title: "Risotto aux Truffes al Dente", category: "Cuisine", gradient: "from-amber-800/30 via-stone-900 to-stone-800", aspect: "aspect-square" },
+  { id: 6, title: "Salon Panoramique Océan", category: "Intérieur", gradient: "from-stone-900 via-cyan-900/10 to-stone-800", aspect: "aspect-[4/5]" },
+  { id: 7, title: "Plateau Omakase", category: "Cuisine", gradient: "from-red-900/20 via-stone-900 to-amber-900/10", aspect: "aspect-[4/5]" },
+  { id: 8, title: "Soirée aux Chandelles", category: "Ambiance", gradient: "from-amber-900/40 via-orange-900/20 to-stone-900", aspect: "aspect-square" },
+  { id: 9, title: "La Salle Zen", category: "Intérieur", gradient: "from-stone-700 via-stone-900 to-stone-800", aspect: "aspect-square" },
+  { id: 10, title: "Dîner Corporatif", category: "Événements", gradient: "from-stone-800 via-amber-800/20 to-stone-900", aspect: "aspect-[4/5]" },
+  { id: 11, title: "Branzino Glacé au Miso", category: "Cuisine", gradient: "from-stone-900 via-amber-900/20 to-stone-800", aspect: "aspect-square" },
+  { id: 12, title: "Heure Dorée", category: "Ambiance", gradient: "from-yellow-900/20 via-amber-900/30 to-stone-900", aspect: "aspect-[4/5]" },
 ];
 
 export default function GalleryPage() {
-  const [active, setActive] = useState("All");
-  const filtered = active === "All" ? galleryItems : galleryItems.filter((item) => item.category === active);
+  const [active, setActive] = useState("Tous");
+  const filtered = active === "Tous" ? galleryItems : galleryItems.filter((item) => item.category === active);
 
   return (
     <>
@@ -33,13 +33,13 @@ export default function GalleryPage() {
       <section className="relative section-spacing border-b border-stone-800 bg-gradient-to-b from-stone-900 to-stone-950 overflow-hidden">
         <div className="absolute top-10 right-1/3 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl" />
         <div className="container-premium text-center space-y-8 relative z-10 animate-fade-in">
-          <p className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Visual Journey</p>
+          <p className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Parcours Visuel</p>
           <h1 className="text-5xl md:text-7xl font-heading font-bold">
-            Our <span className="text-amber-400">Gallery</span>
+            Notre <span className="text-amber-400">Galerie</span>
           </h1>
           <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto" />
           <p className="text-lg text-stone-300 max-w-2xl mx-auto">
-            A glimpse into the world of 2R Fusion — where every space, every plate, and every moment is designed to inspire.
+            Un aperçu du monde de 2R Fusion — où chaque espace, chaque assiette et chaque moment est conçu pour vous inspirer.
           </p>
         </div>
       </section>
@@ -89,14 +89,14 @@ export default function GalleryPage() {
       <section className="section-spacing">
         <div className="container-premium text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-heading font-bold">
-            Experience It <span className="text-amber-400">In Person</span>
+            Vivez-le <span className="text-amber-400">en Personne</span>
           </h2>
           <p className="text-stone-300 max-w-xl mx-auto">
-            Photos capture moments. A visit creates memories. Reserve your table and step into the world of 2R Fusion.
+            Les photos capturent des moments. Une visite crée des souvenirs. Réservez votre table et entrez dans le monde de 2R Fusion.
           </p>
           <Link href="/book">
             <Button className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-6 text-lg">
-              Book a Table
+              Réservez une Table
             </Button>
           </Link>
         </div>

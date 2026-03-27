@@ -131,8 +131,8 @@ export default function OrdersPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Orders"
-        description="Manage and track all orders"
+        title="Commandes"
+        description="Gérer et suivre toutes les commandes"
       />
 
       {/* Filters */}
@@ -141,31 +141,31 @@ export default function OrdersPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Orders
+                Rechercher Commandes
               </label>
               <Input
-                placeholder="Search by Order ID, Guest, or Table..."
+                placeholder="Rechercher par ID Commande, Client ou Table..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <div className="w-full md:w-48">
               <label className="text-sm text-stone-400 block mb-2">
-                Status
+                Statut
               </label>
               <Select defaultValue="all">
                 <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-800 border-stone-700">
-                  <SelectItem value="all">All Orders</SelectItem>
-                  <SelectItem value="active">Active</SelectItem>
-                  <SelectItem value="completed">Completed</SelectItem>
-                  <SelectItem value="void">Void</SelectItem>
+                  <SelectItem value="all">Toutes les Commandes</SelectItem>
+                  <SelectItem value="active">Actif</SelectItem>
+                  <SelectItem value="completed">Terminé</SelectItem>
+                  <SelectItem value="void">Annulé</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              + New Order
+              + Nouvelle Commande
             </Button>
           </div>
         </CardContent>
@@ -174,21 +174,21 @@ export default function OrdersPage() {
       {/* Orders Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">All Orders</CardTitle>
+          <CardTitle className="text-stone-100">Toutes les Commandes</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Order ID</TableHead>
-                  <TableHead className="text-stone-400">Guest</TableHead>
+                  <TableHead className="text-stone-400">ID Commande</TableHead>
+                  <TableHead className="text-stone-400">Client</TableHead>
                   <TableHead className="text-stone-400">Table</TableHead>
-                  <TableHead className="text-stone-400">Items</TableHead>
+                  <TableHead className="text-stone-400">Articles</TableHead>
                   <TableHead className="text-stone-400">Total</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
-                  <TableHead className="text-stone-400">Payment</TableHead>
-                  <TableHead className="text-stone-400">Time</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
+                  <TableHead className="text-stone-400">Paiement</TableHead>
+                  <TableHead className="text-stone-400">Heure</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -225,7 +225,11 @@ export default function OrdersPage() {
                               : "bg-red-900/30 text-red-200"
                         }
                       >
-                        {order.payment}
+                        {order.payment === "PAID"
+                          ? "PAYÉ"
+                          : order.payment === "PENDING"
+                            ? "EN ATTENTE"
+                            : "REMBOURSÉ"}
                       </Badge>
                     </TableCell>
                     <TableCell className="text-stone-400">{order.time}</TableCell>
@@ -236,7 +240,7 @@ export default function OrdersPage() {
                           size="sm"
                           className="text-amber-400 hover:text-amber-300"
                         >
-                          View
+                          Voir
                         </Button>
                         {order.status === "ACTIVE" && (
                           <Button
@@ -244,7 +248,7 @@ export default function OrdersPage() {
                             size="sm"
                             className="text-red-400 hover:text-red-300"
                           >
-                            Void
+                            Annuler
                           </Button>
                         )}
                       </div>

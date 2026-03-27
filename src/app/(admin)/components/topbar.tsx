@@ -8,8 +8,8 @@ interface TopbarProps {
 }
 
 export function Topbar({ sidebarCollapsed = false }: TopbarProps) {
-  const userRole = "Manager"; // This would come from auth context in real app
-  const userName = "Admin User";
+  const userRole = "Gestionnaire"; // This would come from auth context in real app
+  const userName = "Utilisateur Admin";
   const notificationCount = 3;
 
   return (

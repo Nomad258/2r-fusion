@@ -80,17 +80,17 @@ export function DishDetail({
                 <div className="flex flex-wrap gap-2 justify-end">
                   {dish.isChefSpecial && (
                     <Badge className="bg-amber-900 text-amber-50">
-                      Chef&apos;s Special
+                      Spécialité du Chef
                     </Badge>
                   )}
                   {dish.isNew && (
                     <Badge className="bg-emerald-900 text-emerald-50">
-                      New
+                      Nouveau
                     </Badge>
                   )}
                   {dish.isSeasonal && (
                     <Badge className="bg-blue-900 text-blue-50">
-                      Seasonal
+                      De Saison
                     </Badge>
                   )}
                 </div>
@@ -122,7 +122,7 @@ export function DishDetail({
             <div className="grid grid-cols-2 gap-4 p-4 bg-stone-900/50 rounded-lg border border-amber-900/10">
               {dish.prepTimeMinutes && (
                 <div>
-                  <p className="text-xs text-stone-500">Prep Time</p>
+                  <p className="text-xs text-stone-500">Temps de Préparation</p>
                   <p className="text-sm font-light text-stone-200">
                     {dish.prepTimeMinutes} min
                   </p>
@@ -130,7 +130,7 @@ export function DishDetail({
               )}
               {dish.spiceLevel && (
                 <div>
-                  <p className="text-xs text-stone-500">Spice Level</p>
+                  <p className="text-xs text-stone-500">Niveau d&apos;Épice</p>
                   <p className="text-sm font-light text-stone-200">
                     {"🌶️".repeat(dish.spiceLevel)}
                   </p>
@@ -138,15 +138,15 @@ export function DishDetail({
               )}
               {dish.totalOrdered > 0 && (
                 <div>
-                  <p className="text-xs text-stone-500">Most Popular</p>
+                  <p className="text-xs text-stone-500">Plus Populaire</p>
                   <p className="text-sm font-light text-stone-200">
-                    {dish.totalOrdered} ordered
+                    {dish.totalOrdered} commandé
                   </p>
                 </div>
               )}
               {dish.rating > 0 && (
                 <div>
-                  <p className="text-xs text-stone-500">Rating</p>
+                  <p className="text-xs text-stone-500">Évaluation</p>
                   <p className="text-sm font-light text-stone-200">
                     ⭐ {dish.rating.toFixed(1)}
                   </p>
@@ -158,7 +158,7 @@ export function DishDetail({
             {ingredients.length > 0 && (
               <div>
                 <h3 className="text-sm font-semibold text-amber-100 mb-3">
-                  Ingredients
+                  Ingrédients
                 </h3>
                 <ul className="space-y-2">
                   {ingredients.map((ingredient, idx) => (
@@ -178,7 +178,7 @@ export function DishDetail({
             {allergens.length > 0 && (
               <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-lg">
                 <h3 className="text-sm font-semibold text-red-200 mb-2">
-                  Allergens
+                  Allergènes
                 </h3>
                 <p className="text-sm text-red-200/80">{allergens.join(", ")}</p>
               </div>
@@ -188,7 +188,7 @@ export function DishDetail({
             {dish.pairingSuggestion && (
               <div className="p-3 bg-amber-950/20 border border-amber-900/30 rounded-lg">
                 <h3 className="text-sm font-semibold text-amber-200 mb-2">
-                  Wine Pairing
+                  Accords Mets-Vins
                 </h3>
                 <p className="text-sm text-amber-200/80">
                   {dish.pairingSuggestion}
@@ -199,9 +199,9 @@ export function DishDetail({
             {/* Chef notes */}
             <div className="p-3 bg-stone-900/50 border border-amber-900/10 rounded-lg">
               <p className="text-xs text-stone-500 italic">
-                &quot;At 2R Fusion, we craft every dish with precision and passion,
-                using the finest ingredients from local artisans and global
-                suppliers.&quot;
+                &quot;Chez 2R Fusion, nous élaborons chaque plat avec précision et passion,
+                en utilisant les meilleurs ingrédients d&apos;artisans locaux et de
+                fournisseurs mondiaux.&quot;
               </p>
             </div>
 
@@ -232,7 +232,7 @@ export function DishDetail({
                 disabled={!dish.isAvailable}
                 className="w-full bg-amber-700 hover:bg-amber-600 text-stone-950 font-semibold"
               >
-                {dish.isAvailable ? "Add to Order" : "Currently Unavailable"}
+                {dish.isAvailable ? "Ajouter à la Commande" : "Actuellement Indisponible"}
               </Button>
             </div>
           </div>

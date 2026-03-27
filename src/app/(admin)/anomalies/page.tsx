@@ -41,23 +41,23 @@ const trendData = [
 ];
 
 const anomalies = [
-  { id: "ANM-001", type: "EXCESSIVE_VOIDS", severity: "critical", employee: "Ahmed Bennani", detail: "3 orders voided totaling 2,850 MAD in 10 minutes", time: "22:15", amount: 2850 },
-  { id: "ANM-002", type: "CASH_MISMATCH", severity: "critical", employee: "Salim Tazi", detail: "Cash drawer short by 1,200 MAD at end of shift — 3rd time this week", time: "20:45", amount: 1200 },
-  { id: "ANM-003", type: "UNUSUAL_DISCOUNT", severity: "high", employee: "Fatima El Houari", detail: "35% discount applied to Table 7 — exceeds 20% authorization threshold", time: "19:30", amount: 450 },
-  { id: "ANM-004", type: "INVENTORY_SHRINKAGE", severity: "high", employee: "System", detail: "Black truffle: 8 portions unaccounted between delivery and stock count", time: "18:00", amount: 4400 },
-  { id: "ANM-005", type: "SUSPICIOUS_PATTERN", severity: "high", employee: "Mohamed Zahra", detail: "14 voids in 3 hours — rate 3x above team average", time: "17:45", amount: 890 },
-  { id: "ANM-006", type: "EXCESSIVE_VOIDS", severity: "medium", employee: "Karim Fassih", detail: "3 cancelled orders of premium dishes at 280 MAD each", time: "15:20", amount: 840 },
-  { id: "ANM-007", type: "UNUSUAL_DISCOUNT", severity: "medium", employee: "Yasmine Bennani", detail: "Progressive discounts across 4 services — cumulative 670 MAD", time: "14:50", amount: 670 },
-  { id: "ANM-008", type: "CASH_MISMATCH", severity: "medium", employee: "Abdelaziz Karim", detail: "Partial cash payment of 320 MAD not recorded in POS", time: "13:15", amount: 320 },
-  { id: "ANM-009", type: "INVENTORY_SHRINKAGE", severity: "low", employee: "System", detail: "Minor variance: lobster (-2), mackerel (-3), mushrooms (-1kg)", time: "12:00", amount: 0 },
-  { id: "ANM-010", type: "SUSPICIOUS_PATTERN", severity: "low", employee: "Nadia Alaoui", detail: "2 minor voids on multi-item transaction — within tolerance", time: "11:30", amount: 85 },
+  { id: "ANM-001", type: "EXCESSIVE_VOIDS", severity: "critical", employee: "Ahmed Bennani", detail: "3 commandes annulées totalisant 2,850 MAD en 10 minutes", time: "22:15", amount: 2850 },
+  { id: "ANM-002", type: "CASH_MISMATCH", severity: "critical", employee: "Salim Tazi", detail: "Caisse courte de 1,200 MAD en fin de service — 3e fois cette semaine", time: "20:45", amount: 1200 },
+  { id: "ANM-003", type: "UNUSUAL_DISCOUNT", severity: "high", employee: "Fatima El Houari", detail: "Remise de 35% appliquée à la Table 7 — dépasse le seuil d&apos;autorisation de 20%", time: "19:30", amount: 450 },
+  { id: "ANM-004", type: "INVENTORY_SHRINKAGE", severity: "high", employee: "System", detail: "Truffe noire: 8 portions non comptabilisées entre livraison et inventaire", time: "18:00", amount: 4400 },
+  { id: "ANM-005", type: "SUSPICIOUS_PATTERN", severity: "high", employee: "Mohamed Zahra", detail: "14 annulations en 3 heures — taux 3x supérieur à la moyenne de l&apos;équipe", time: "17:45", amount: 890 },
+  { id: "ANM-006", type: "EXCESSIVE_VOIDS", severity: "medium", employee: "Karim Fassih", detail: "3 commandes annulées de plats premium à 280 MAD chacun", time: "15:20", amount: 840 },
+  { id: "ANM-007", type: "UNUSUAL_DISCOUNT", severity: "medium", employee: "Yasmine Bennani", detail: "Remises progressives sur 4 services — total cumulé 670 MAD", time: "14:50", amount: 670 },
+  { id: "ANM-008", type: "CASH_MISMATCH", severity: "medium", employee: "Abdelaziz Karim", detail: "Paiement partiel en espèces de 320 MAD non enregistré au POS", time: "13:15", amount: 320 },
+  { id: "ANM-009", type: "INVENTORY_SHRINKAGE", severity: "low", employee: "System", detail: "Variation mineure: homard (-2), maquereau (-3), champignons (-1kg)", time: "12:00", amount: 0 },
+  { id: "ANM-010", type: "SUSPICIOUS_PATTERN", severity: "low", employee: "Nadia Alaoui", detail: "2 annulations mineures sur transaction multi-articles — dans la tolérance", time: "11:30", amount: 85 },
 ];
 
 const employeeRisks = [
-  { name: "Ahmed Bennani", anomalies: 12, riskScore: 92, role: "Server" },
-  { name: "Salim Tazi", anomalies: 8, riskScore: 78, role: "Cashier" },
-  { name: "Fatima El Houari", anomalies: 5, riskScore: 61, role: "Server" },
-  { name: "Mohamed Zahra", anomalies: 4, riskScore: 54, role: "Server" },
+  { name: "Ahmed Bennani", anomalies: 12, riskScore: 92, role: "Serveur" },
+  { name: "Salim Tazi", anomalies: 8, riskScore: 78, role: "Caissier" },
+  { name: "Fatima El Houari", anomalies: 5, riskScore: 61, role: "Serveur" },
+  { name: "Mohamed Zahra", anomalies: 4, riskScore: 54, role: "Serveur" },
   { name: "Karim Fassih", anomalies: 3, riskScore: 42, role: "Barista" },
 ];
 
@@ -69,11 +69,11 @@ const severityColors: Record<string, string> = {
 };
 
 const typeLabels: Record<string, string> = {
-  EXCESSIVE_VOIDS: "Excessive Voids",
-  UNUSUAL_DISCOUNT: "Unusual Discount",
-  CASH_MISMATCH: "Cash Mismatch",
-  INVENTORY_SHRINKAGE: "Inventory Shrinkage",
-  SUSPICIOUS_PATTERN: "Suspicious Pattern",
+  EXCESSIVE_VOIDS: "Annulations Excessives",
+  UNUSUAL_DISCOUNT: "Remise Inhabituelle",
+  CASH_MISMATCH: "Décalage Caisse",
+  INVENTORY_SHRINKAGE: "Disparitions Inventaire",
+  SUSPICIOUS_PATTERN: "Motif Suspect",
 };
 
 export default function AnomaliesPage() {
@@ -86,8 +86,8 @@ export default function AnomaliesPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Anomaly Detection"
-        description="Real-time fraud, theft, and operational risk monitoring"
+        title="Détection des Anomalies"
+        description="Surveillance en temps réel de la fraude, vol et risques opérationnels"
       />
 
       {/* Risk Score */}
@@ -95,14 +95,14 @@ export default function AnomaliesPage() {
         <CardContent className="pt-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Overall Risk Score</p>
+              <p className="text-sm text-stone-400 mb-1">Score de Risque Global</p>
               <div className="flex items-baseline gap-3">
                 <p className={`text-5xl font-bold ${riskScore >= 70 ? "text-red-400" : riskScore >= 40 ? "text-amber-400" : "text-emerald-400"}`}>
                   {riskScore}
                 </p>
                 <span className="text-stone-500">/100</span>
               </div>
-              <p className="text-xs text-stone-500 mt-2">{anomalies.length} anomalies detected today</p>
+              <p className="text-xs text-stone-500 mt-2">{anomalies.length} anomalies détectées aujourd&apos;hui</p>
             </div>
             <Shield className="h-16 w-16 text-amber-400/20" />
           </div>
@@ -112,10 +112,10 @@ export default function AnomaliesPage() {
       {/* Severity Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         {[
-          { label: "Critical", count: critical, color: "text-red-400", border: "border-red-500/30" },
-          { label: "High", count: high, color: "text-orange-400", border: "border-orange-500/30" },
-          { label: "Medium", count: medium, color: "text-yellow-400", border: "border-yellow-500/30" },
-          { label: "Low", count: low, color: "text-emerald-400", border: "border-emerald-500/30" },
+          { label: "Critique", count: critical, color: "text-red-400", border: "border-red-500/30" },
+          { label: "Élevée", count: high, color: "text-orange-400", border: "border-orange-500/30" },
+          { label: "Moyenne", count: medium, color: "text-yellow-400", border: "border-yellow-500/30" },
+          { label: "Faible", count: low, color: "text-emerald-400", border: "border-emerald-500/30" },
         ].map((s) => (
           <Card key={s.label} className={`bg-stone-900 ${s.border}`}>
             <CardContent className="pt-6">
@@ -129,7 +129,7 @@ export default function AnomaliesPage() {
       {/* Trend Chart */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Anomaly Trend (Last 14 Days)</CardTitle>
+          <CardTitle className="text-stone-100">Tendance des Anomalies (14 derniers jours)</CardTitle>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
@@ -138,10 +138,10 @@ export default function AnomaliesPage() {
               <XAxis dataKey="date" stroke="#a8a29e" fontSize={12} />
               <YAxis stroke="#a8a29e" />
               <Tooltip contentStyle={{ backgroundColor: "#1c1917", border: "1px solid #78716b" }} labelStyle={{ color: "#fef3c7" }} />
-              <Line type="monotone" dataKey="critical" stroke="#ef4444" strokeWidth={2} name="Critical" dot={false} />
-              <Line type="monotone" dataKey="high" stroke="#f97316" strokeWidth={2} name="High" dot={false} />
-              <Line type="monotone" dataKey="medium" stroke="#eab308" strokeWidth={1.5} name="Medium" dot={false} />
-              <Line type="monotone" dataKey="low" stroke="#22c55e" strokeWidth={1} name="Low" dot={false} />
+              <Line type="monotone" dataKey="critical" stroke="#ef4444" strokeWidth={2} name="Critique" dot={false} />
+              <Line type="monotone" dataKey="high" stroke="#f97316" strokeWidth={2} name="Élevée" dot={false} />
+              <Line type="monotone" dataKey="medium" stroke="#eab308" strokeWidth={1.5} name="Moyenne" dot={false} />
+              <Line type="monotone" dataKey="low" stroke="#22c55e" strokeWidth={1} name="Faible" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </CardContent>
@@ -153,9 +153,9 @@ export default function AnomaliesPage() {
           <div className="flex items-center justify-between">
             <CardTitle className="text-stone-100 flex items-center gap-2">
               <AlertTriangle className="h-5 w-5 text-amber-400" />
-              Active Anomalies
+              Anomalies Actives
             </CardTitle>
-            <Button variant="ghost" size="sm" className="text-amber-400">Review All</Button>
+            <Button variant="ghost" size="sm" className="text-amber-400">Voir Tout</Button>
           </div>
         </CardHeader>
         <CardContent>
@@ -179,7 +179,7 @@ export default function AnomaliesPage() {
                       )}
                     </div>
                     <p className="text-sm text-stone-400">{a.detail}</p>
-                    <p className="text-xs text-stone-500 mt-1">{a.employee} &bull; Today at {a.time}</p>
+                    <p className="text-xs text-stone-500 mt-1">{a.employee} • Aujourd&apos;hui à {a.time}</p>
                   </div>
                   <Button variant="ghost" size="sm" className="text-amber-400 hover:text-amber-300 ml-4">
                     <Eye className="h-4 w-4" />
@@ -194,16 +194,16 @@ export default function AnomaliesPage() {
       {/* Employee Risk Ranking */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Employee Risk Ranking</CardTitle>
+          <CardTitle className="text-stone-100">Classement des Risques Employés</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow className="border-stone-800 hover:bg-transparent">
-                <TableHead className="text-stone-400">Employee</TableHead>
-                <TableHead className="text-stone-400">Role</TableHead>
+                <TableHead className="text-stone-400">Employé</TableHead>
+                <TableHead className="text-stone-400">Rôle</TableHead>
                 <TableHead className="text-stone-400 text-center">Anomalies</TableHead>
-                <TableHead className="text-stone-400 text-center">Risk Score</TableHead>
+                <TableHead className="text-stone-400 text-center">Score de Risque</TableHead>
                 <TableHead className="text-stone-400">Actions</TableHead>
               </TableRow>
             </TableHeader>
@@ -224,8 +224,8 @@ export default function AnomaliesPage() {
                   </TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="sm" className="text-amber-400 hover:text-amber-300">Review</Button>
-                      <Button variant="ghost" size="sm" className="text-stone-400 hover:text-stone-300">History</Button>
+                      <Button variant="ghost" size="sm" className="text-amber-400 hover:text-amber-300">Examiner</Button>
+                      <Button variant="ghost" size="sm" className="text-stone-400 hover:text-stone-300">Historique</Button>
                     </div>
                   </TableCell>
                 </TableRow>

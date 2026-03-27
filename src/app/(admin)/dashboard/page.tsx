@@ -142,21 +142,20 @@ const recentAnomalies = [
     time: "19:30",
   },
 ];
-
 export default function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Page Header */}
       <PageHeader
-        title="Dashboard"
-        description="Real-time overview of operations"
+        title="Tableau de Bord"
+        description="Vue d&apos;ensemble en temps réel des opérations"
       />
 
       {/* KPI Row */}
       <div className="grid gap-4 md:grid-cols-4">
         <StatCard
           icon={<TrendingUp className="h-6 w-6 text-amber-400" />}
-          title="Revenue Today"
+          title="Chiffre d&apos;Affaires Aujourd&apos;hui"
           value="6,780"
           unit="MAD"
           change={12}
@@ -164,21 +163,21 @@ export default function DashboardPage() {
         />
         <StatCard
           icon={<ShoppingCart className="h-6 w-6 text-amber-400" />}
-          title="Orders Today"
+          title="Commandes Aujourd&apos;hui"
           value={28}
           change={5}
           trend="up"
         />
         <StatCard
           icon={<Calendar className="h-6 w-6 text-amber-400" />}
-          title="Reservations"
+          title="Réservations"
           value={12}
           change={-2}
           trend="down"
         />
         <StatCard
           icon={<AlertCircle className="h-6 w-6 text-amber-400" />}
-          title="Active Alerts"
+          title="Alertes Actives"
           value={4}
           change={1}
           trend="up"
@@ -190,7 +189,7 @@ export default function DashboardPage() {
         {/* Revenue Chart */}
         <Card className="bg-stone-900 border-stone-800">
           <CardHeader>
-            <CardTitle className="text-stone-100">Revenue Trend</CardTitle>
+            <CardTitle className="text-stone-100">Tendance du Chiffre d&apos;Affaires</CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -226,7 +225,7 @@ export default function DashboardPage() {
         {/* Alerts Summary */}
         <Card className="bg-stone-900 border-stone-800">
           <CardHeader>
-            <CardTitle className="text-stone-100">Inventory Alerts</CardTitle>
+            <CardTitle className="text-stone-100">Alertes d&apos;Inventaire</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {inventoryAlerts.map((alert) => (
@@ -240,8 +239,8 @@ export default function DashboardPage() {
                   </p>
                   <p className="text-xs text-stone-400">
                     {alert.status === "EXPIRING"
-                      ? `Expires in ${alert.days} days`
-                      : `${alert.qty} units`}
+                      ? `Expire dans ${alert.days} jours`
+                      : `${alert.qty} unités`}
                   </p>
                 </div>
                 <Badge
@@ -261,10 +260,10 @@ export default function DashboardPage() {
                   }
                 >
                   {alert.status === "EXPIRING"
-                    ? "EXPIRING"
+                    ? "EXPIRE"
                     : alert.status === "CRITICAL"
-                      ? "CRITICAL"
-                      : "LOW"}
+                      ? "CRITIQUE"
+                      : "BAS"}
                 </Badge>
               </div>
             ))}
@@ -278,9 +277,9 @@ export default function DashboardPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="text-stone-100">Recent Orders</CardTitle>
+              <CardTitle className="text-stone-100">Commandes Récentes</CardTitle>
               <Button variant="ghost" size="sm" className="text-amber-400">
-                View All
+                Voir Tout
               </Button>
             </div>
           </CardHeader>
@@ -296,7 +295,7 @@ export default function DashboardPage() {
                       {order.id}
                     </p>
                     <p className="text-xs text-stone-400">
-                      Table {order.table} • {order.items} items
+                      Table {order.table} • {order.items} articles
                     </p>
                   </div>
                   <div className="text-right">
@@ -315,9 +314,9 @@ export default function DashboardPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="text-stone-100">Today&apos;s Reservations</CardTitle>
+              <CardTitle className="text-stone-100">Réservations d&apos;Aujourd&apos;hui</CardTitle>
               <Button variant="ghost" size="sm" className="text-amber-400">
-                View All
+                Voir Tout
               </Button>
             </div>
           </CardHeader>
@@ -341,7 +340,7 @@ export default function DashboardPage() {
                       )}
                     </p>
                     <p className="text-xs text-stone-400">
-                      {res.time} • Party of {res.party}
+                      {res.time} • Groupe de {res.party}
                     </p>
                   </div>
                   <div className="text-right">
@@ -360,10 +359,10 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between">
             <CardTitle className="text-stone-100 flex items-center gap-2">
               <Activity className="h-5 w-5 text-amber-400" />
-              Recent Anomalies
+              Anomalies Récentes
             </CardTitle>
             <Button variant="ghost" size="sm" className="text-amber-400">
-              Review All
+              Examiner Tout
             </Button>
           </div>
         </CardHeader>
@@ -406,16 +405,16 @@ export default function DashboardPage() {
         <CardContent className="pt-6">
           <div className="flex flex-wrap gap-3">
             <Button className="bg-amber-600 hover:bg-amber-700">
-              New Order
+              Nouvelle Commande
             </Button>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              New Reservation
+              Nouvelle Réservation
             </Button>
             <Button variant="outline" className="border-stone-700">
-              Generate Reports
+              Générer Rapports
             </Button>
             <Button variant="outline" className="border-stone-700">
-              View Analytics
+              Voir Analyses
             </Button>
           </div>
         </CardContent>

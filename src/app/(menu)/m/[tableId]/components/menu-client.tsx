@@ -49,11 +49,11 @@ export function MenuClient({
           </Badge>
           {isVipZone && (
             <Badge className="bg-amber-700 text-stone-950 px-3 py-1">
-              VIP Menu
+              Menu VIP
             </Badge>
           )}
         </div>
-        <p className="text-xs text-stone-500">Scan for updates</p>
+        <p className="text-xs text-stone-500">Scannez pour les mises à jour</p>
       </div>
 
       {/* Category navigation */}
@@ -98,7 +98,7 @@ export function MenuClient({
         ) : (
           <div className="py-12 text-center">
             <p className="text-stone-500 text-sm">
-              No dishes available in this category
+              Aucun plat disponible dans cette catégorie
             </p>
           </div>
         )}
@@ -113,7 +113,7 @@ export function MenuClient({
 
       {/* Footer */}
       <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent px-4 py-4 border-t border-amber-900/20 text-center text-xs text-stone-500">
-        <p>Questions? Ask your server for menu details</p>
+        <p>Des questions ? Demandez à votre serveur pour plus de détails</p>
       </div>
     </div>
   );

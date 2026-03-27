@@ -22,36 +22,36 @@ const roles = [
     id: 1,
     name: "Admin",
     users: 1,
-    permissions: "Full system access",
-    status: "Active",
+    permissions: "Accès système complet",
+    status: "Actif",
   },
   {
     id: 2,
     name: "Manager",
     users: 2,
-    permissions: "Operations, reports, staff",
-    status: "Active",
+    permissions: "Opérations, rapports, personnel",
+    status: "Actif",
   },
   {
     id: 3,
     name: "Chef",
     users: 3,
-    permissions: "Menu, inventory, recipes",
-    status: "Active",
+    permissions: "Menu, inventaire, recettes",
+    status: "Actif",
   },
   {
     id: 4,
     name: "Server",
     users: 5,
-    permissions: "Orders, reservations, tables",
-    status: "Active",
+    permissions: "Commandes, réservations, tables",
+    status: "Actif",
   },
   {
     id: 5,
     name: "Cashier",
     users: 1,
-    permissions: "Payments, invoices",
-    status: "Active",
+    permissions: "Paiements, factures",
+    status: "Actif",
   },
 ];
 
@@ -59,15 +59,15 @@ export default function SettingsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Settings"
-        description="System configuration and administration"
+        title="Paramètres"
+        description="Configuration système et administration"
       />
 
       <Tabs defaultValue="general" className="space-y-6">
         <TabsList className="bg-stone-800 border-stone-700">
-          <TabsTrigger value="general">General</TabsTrigger>
-          <TabsTrigger value="roles">Roles & Permissions</TabsTrigger>
-          <TabsTrigger value="system">System Status</TabsTrigger>
+          <TabsTrigger value="general">Général</TabsTrigger>
+          <TabsTrigger value="roles">Rôles & Permissions</TabsTrigger>
+          <TabsTrigger value="system">État du Système</TabsTrigger>
         </TabsList>
 
         {/* General Settings */}
@@ -75,68 +75,68 @@ export default function SettingsPage() {
           <div className="space-y-6">
             <Card className="bg-stone-900 border-stone-800">
               <CardHeader>
-                <CardTitle className="text-stone-100">Restaurant Details</CardTitle>
+                <CardTitle className="text-stone-100">Détails du Restaurant</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <label className="text-sm text-stone-400 block mb-2">
-                      Restaurant Name
+                      Nom du Restaurant
                     </label>
                     <p className="text-stone-100 font-medium">2R Fusion</p>
                   </div>
                   <div>
                     <label className="text-sm text-stone-400 block mb-2">
-                      Location
+                      Localisation
                     </label>
-                    <p className="text-stone-100 font-medium">Tangier, Morocco</p>
+                    <p className="text-stone-100 font-medium">Tanger, Maroc</p>
                   </div>
                   <div>
                     <label className="text-sm text-stone-400 block mb-2">
-                      Capacity
+                      Capacité
                     </label>
-                    <p className="text-stone-100 font-medium">80-150 covers</p>
+                    <p className="text-stone-100 font-medium">80-150 couverts</p>
                   </div>
                   <div>
                     <label className="text-sm text-stone-400 block mb-2">
-                      Timezone
+                      Fuseau Horaire
                     </label>
-                    <p className="text-stone-100 font-medium">Morocco Standard Time</p>
+                    <p className="text-stone-100 font-medium">Heure Standard du Maroc</p>
                   </div>
                 </div>
                 <Button className="bg-amber-600 hover:bg-amber-700">
-                  Edit Details
+                  Modifier les Détails
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-stone-900 border-stone-800">
               <CardHeader>
-                <CardTitle className="text-stone-100">Business Hours</CardTitle>
+                <CardTitle className="text-stone-100">Heures d&apos;Ouverture</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 rounded-lg bg-stone-800/50">
-                    <p className="text-sm text-stone-100">Monday - Thursday</p>
+                    <p className="text-sm text-stone-100">Lundi - Jeudi</p>
                     <p className="text-sm font-medium text-amber-400">
                       11:00 - 23:00
                     </p>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-stone-800/50">
-                    <p className="text-sm text-stone-100">Friday - Saturday</p>
+                    <p className="text-sm text-stone-100">Vendredi - Samedi</p>
                     <p className="text-sm font-medium text-amber-400">
                       11:00 - 01:00
                     </p>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-stone-800/50">
-                    <p className="text-sm text-stone-100">Sunday</p>
+                    <p className="text-sm text-stone-100">Dimanche</p>
                     <p className="text-sm font-medium text-amber-400">
                       12:00 - 23:00
                     </p>
                   </div>
                 </div>
                 <Button className="w-full mt-4 bg-amber-600 hover:bg-amber-700">
-                  Edit Hours
+                  Modifier les Heures
                 </Button>
               </CardContent>
             </Card>
@@ -150,10 +150,10 @@ export default function SettingsPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="text-stone-100 flex items-center gap-2">
                   <Users className="h-5 w-5 text-amber-400" />
-                  User Roles
+                  Rôles Utilisateur
                 </CardTitle>
                 <Button size="sm" className="bg-amber-600 hover:bg-amber-700">
-                  + New Role
+                  + Nouveau Rôle
                 </Button>
               </div>
             </CardHeader>
@@ -162,10 +162,10 @@ export default function SettingsPage() {
                 <Table>
                   <TableHeader>
                     <TableRow className="border-stone-800 hover:bg-transparent">
-                      <TableHead className="text-stone-400">Role Name</TableHead>
-                      <TableHead className="text-stone-400">Users</TableHead>
+                      <TableHead className="text-stone-400">Nom du Rôle</TableHead>
+                      <TableHead className="text-stone-400">Utilisateurs</TableHead>
                       <TableHead className="text-stone-400">Permissions</TableHead>
-                      <TableHead className="text-stone-400">Status</TableHead>
+                      <TableHead className="text-stone-400">Statut</TableHead>
                       <TableHead className="text-stone-400">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -195,7 +195,7 @@ export default function SettingsPage() {
                             size="sm"
                             className="text-amber-400 hover:text-amber-300"
                           >
-                            Edit
+                            Modifier
                           </Button>
                         </TableCell>
                       </TableRow>
@@ -212,7 +212,7 @@ export default function SettingsPage() {
           <div className="space-y-6">
             <Card className="bg-stone-900 border-stone-800">
               <CardHeader>
-                <CardTitle className="text-stone-100">System Status</CardTitle>
+                <CardTitle className="text-stone-100">État du Système</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between p-4 rounded-lg bg-stone-800/50">
@@ -220,13 +220,13 @@ export default function SettingsPage() {
                     <Database className="h-5 w-5 text-emerald-400" />
                     <div>
                       <p className="text-sm font-medium text-stone-100">
-                        Database
+                        Base de Données
                       </p>
                       <p className="text-xs text-stone-400">PostgreSQL</p>
                     </div>
                   </div>
                   <Badge className="bg-emerald-900/30 text-emerald-200">
-                    Operational
+                    Opérationnel
                   </Badge>
                 </div>
 
@@ -239,7 +239,7 @@ export default function SettingsPage() {
                     </div>
                   </div>
                   <Badge className="bg-emerald-900/30 text-emerald-200">
-                    Healthy
+                    Sain
                   </Badge>
                 </div>
 
@@ -250,11 +250,11 @@ export default function SettingsPage() {
                       <p className="text-sm font-medium text-stone-100">
                         SSL/TLS
                       </p>
-                      <p className="text-xs text-stone-400">Expires: 2026-12-31</p>
+                      <p className="text-xs text-stone-400">Expire: 2026-12-31</p>
                     </div>
                   </div>
                   <Badge className="bg-emerald-900/30 text-emerald-200">
-                    Valid
+                    Valide
                   </Badge>
                 </div>
               </CardContent>
@@ -266,13 +266,13 @@ export default function SettingsPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <Button variant="outline" className="w-full border-stone-700">
-                  Run Backup
+                  Exécuter la Sauvegarde
                 </Button>
                 <Button variant="outline" className="w-full border-stone-700">
-                  Clear Cache
+                  Vider le Cache
                 </Button>
                 <Button variant="outline" className="w-full border-stone-700">
-                  View Logs
+                  Afficher les Journaux
                 </Button>
               </CardContent>
             </Card>

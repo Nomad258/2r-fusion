@@ -20,54 +20,54 @@ const alerts = [
     id: 1,
     type: "INVENTORY",
     severity: "CRITICAL",
-    title: "Saffron Stock Critical",
-    message: "Saffron threads below 10% of minimum stock. Immediate reorder required.",
-    time: "5 min ago",
+    title: "Stock de Safran Critique",
+    message: "Le safran est en dessous de 10% du stock minimum. Réapprovisionnement immédiat requis.",
+    time: "il y a 5 min",
     read: false,
   },
   {
     id: 2,
     type: "INVOICE",
     severity: "HIGH",
-    title: "Overdue Invoice",
-    message: "INV-2406 from Premium Seafood Co is 5 days overdue.",
-    time: "1 hour ago",
+    title: "Facture En Retard",
+    message: "INV-2406 de Premium Seafood Co est en retard de 5 jours.",
+    time: "il y a 1 heure",
     read: false,
   },
   {
     id: 3,
     type: "RESERVATION",
     severity: "MEDIUM",
-    title: "High Reservation Volume",
-    message: "14 reservations for tonight. Table availability at 75%.",
-    time: "2 hours ago",
+    title: "Volume de Réservations Élevé",
+    message: "14 réservations pour ce soir. Disponibilité des tables à 75%.",
+    time: "il y a 2 heures",
     read: true,
   },
   {
     id: 4,
     type: "SYSTEM",
     severity: "LOW",
-    title: "Backup Completed",
-    message: "Daily system backup completed successfully.",
-    time: "3 hours ago",
+    title: "Sauvegarde Effectuée",
+    message: "La sauvegarde système quotidienne s&apos;est déroulée avec succès.",
+    time: "il y a 3 heures",
     read: true,
   },
   {
     id: 5,
     type: "EMPLOYEE",
     severity: "MEDIUM",
-    title: "Staff Anomaly Detected",
-    message: "Hassan Rami: Unusual discount patterns (5 comps in 2 hours).",
-    time: "4 hours ago",
+    title: "Anomalie Employé Détectée",
+    message: "Hassan Rami: Motifs de remises inhabituels (5 gratuités en 2 heures).",
+    time: "il y a 4 heures",
     read: true,
   },
   {
     id: 6,
     type: "INVENTORY",
     severity: "MEDIUM",
-    title: "Expiration Warning",
-    message: "Premium Wagyu batch expires in 3 days.",
-    time: "Yesterday",
+    title: "Avertissement d&apos;Expiration",
+    message: "Le lot de Wagyu Premium expire dans 3 jours.",
+    time: "Hier",
     read: true,
   },
 ];
@@ -79,8 +79,8 @@ export default function AlertsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Alert Center"
-        description="System alerts and notifications"
+        title="Centre d&apos;Alertes"
+        description="Alertes système et notifications"
       />
 
       {/* Summary Cards */}
@@ -89,7 +89,7 @@ export default function AlertsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Total Alerts</p>
+                <p className="text-sm text-stone-400 mb-1">Total Alertes</p>
                 <p className="text-3xl font-semibold text-stone-100">
                   {alerts.length}
                 </p>
@@ -101,18 +101,18 @@ export default function AlertsPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Unread</p>
+              <p className="text-sm text-stone-400 mb-1">Non Lues</p>
               <p className="text-3xl font-semibold text-red-400">
                 {unreadCount}
               </p>
-              <p className="text-xs text-stone-400 mt-2">require attention</p>
+              <p className="text-xs text-stone-400 mt-2">nécessitent attention</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Critical</p>
+              <p className="text-sm text-stone-400 mb-1">Critique</p>
               <p className="text-3xl font-semibold text-red-600">
                 {criticalCount}
               </p>
@@ -124,10 +124,10 @@ export default function AlertsPage() {
           <CardContent className="pt-6">
             <div className="flex gap-2">
               <Button size="sm" className="bg-amber-600 hover:bg-amber-700">
-                Mark All Read
+                Marquer Tout comme Lues
               </Button>
               <Button size="sm" variant="outline" className="border-stone-700">
-                Clear
+                Effacer
               </Button>
             </div>
           </CardContent>
@@ -139,19 +139,19 @@ export default function AlertsPage() {
         <CardContent className="pt-6">
           <div className="w-full md:w-48">
             <label className="text-sm text-stone-400 block mb-2">
-              Filter by Type
+              Filtrer par Type
             </label>
             <Select defaultValue="all">
               <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-stone-800 border-stone-700">
-                <SelectItem value="all">All Types</SelectItem>
-                <SelectItem value="inventory">Inventory</SelectItem>
-                <SelectItem value="invoice">Invoice</SelectItem>
-                <SelectItem value="reservation">Reservation</SelectItem>
-                <SelectItem value="employee">Employee</SelectItem>
-                <SelectItem value="system">System</SelectItem>
+                <SelectItem value="all">Tous les Types</SelectItem>
+                <SelectItem value="inventory">Inventaire</SelectItem>
+                <SelectItem value="invoice">Facture</SelectItem>
+                <SelectItem value="reservation">Réservation</SelectItem>
+                <SelectItem value="employee">Employé</SelectItem>
+                <SelectItem value="system">Système</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -204,7 +204,7 @@ export default function AlertsPage() {
                       size="sm"
                       className="bg-amber-600 hover:bg-amber-700"
                     >
-                      Mark Read
+                      Marquer comme Lue
                     </Button>
                   ) : (
                     <Button
@@ -212,7 +212,7 @@ export default function AlertsPage() {
                       variant="ghost"
                       className="text-stone-500"
                     >
-                      Dismiss
+                      Fermer
                     </Button>
                   )}
                 </div>

@@ -24,14 +24,14 @@ import {
 import { PageHeader } from "@/components/shared";
 
 const demandByCategory = [
-  { category: "Seafood", demand: 3100 },
-  { category: "Premium Meats", demand: 2890 },
-  { category: "Vegetables", demand: 2340 },
-  { category: "Dairy", demand: 1560 },
-  { category: "Spices", demand: 1240 },
-  { category: "Beverages", demand: 1670 },
-  { category: "Oils & Sauces", demand: 890 },
-  { category: "Grains & Pasta", demand: 1120 },
+  { category: "Fruits de Mer", demand: 3100 },
+  { category: "Viandes Premium", demand: 2890 },
+  { category: "Légumes", demand: 2340 },
+  { category: "Produits Laitiers", demand: 1560 },
+  { category: "Épices", demand: 1240 },
+  { category: "Boissons", demand: 1670 },
+  { category: "Huiles & Sauces", demand: 890 },
+  { category: "Grains & Pâtes", demand: 1120 },
 ];
 
 const forecastItems = [
@@ -60,8 +60,8 @@ export default function ForecastsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Predictive Ordering"
-        description="AI-powered demand forecasting and reorder recommendations"
+        title="Commandes Prédictives"
+        description="Prévisions de demande IA et recommandations de réapprovisionnement"
       />
 
       {/* Summary Cards */}
@@ -70,9 +70,9 @@ export default function ForecastsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Forecast Total</p>
+                <p className="text-sm text-stone-400 mb-1">Total Prévisions</p>
                 <p className="text-3xl font-semibold text-stone-100">{totalCost.toLocaleString()}</p>
-                <p className="text-xs text-stone-500 mt-1">MAD next week</p>
+                <p className="text-xs text-stone-500 mt-1">MAD semaine prochaine</p>
               </div>
               <TrendingUp className="h-6 w-6 text-amber-400" />
             </div>
@@ -82,9 +82,9 @@ export default function ForecastsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Items to Reorder</p>
+                <p className="text-sm text-stone-400 mb-1">Articles à Réapprovisionner</p>
                 <p className="text-3xl font-semibold text-red-400">{itemsToReorder}</p>
-                <p className="text-xs text-stone-500 mt-1">below threshold</p>
+                <p className="text-xs text-stone-500 mt-1">au-dessous du seuil</p>
               </div>
               <AlertCircle className="h-6 w-6 text-red-400" />
             </div>
@@ -94,9 +94,9 @@ export default function ForecastsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Avg Confidence</p>
+                <p className="text-sm text-stone-400 mb-1">Confiance Moyenne</p>
                 <p className="text-3xl font-semibold text-emerald-400">{avgConfidence}%</p>
-                <p className="text-xs text-stone-500 mt-1">model accuracy</p>
+                <p className="text-xs text-stone-500 mt-1">précision du modèle</p>
               </div>
               <Zap className="h-6 w-6 text-emerald-400" />
             </div>
@@ -106,9 +106,9 @@ export default function ForecastsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Potential Savings</p>
+                <p className="text-sm text-stone-400 mb-1">Économies Potentielles</p>
                 <p className="text-3xl font-semibold text-amber-400">8,450</p>
-                <p className="text-xs text-stone-500 mt-1">MAD vs manual ordering</p>
+                <p className="text-xs text-stone-500 mt-1">MAD vs commandes manuelles</p>
               </div>
               <Package className="h-6 w-6 text-amber-400" />
             </div>
@@ -119,7 +119,7 @@ export default function ForecastsPage() {
       {/* Demand Chart */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Forecasted Demand by Category</CardTitle>
+          <CardTitle className="text-stone-100">Demande Prévue par Catégorie</CardTitle>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
@@ -131,7 +131,7 @@ export default function ForecastsPage() {
                 contentStyle={{ backgroundColor: "#1c1917", border: "1px solid #78716b" }}
                 labelStyle={{ color: "#fef3c7" }}
               />
-              <Bar dataKey="demand" fill="#b45309" radius={[4, 4, 0, 0]} name="Predicted Units" />
+              <Bar dataKey="demand" fill="#b45309" radius={[4, 4, 0, 0]} name="Unités Prévues" />
             </BarChart>
           </ResponsiveContainer>
         </CardContent>
@@ -141,11 +141,11 @@ export default function ForecastsPage() {
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-stone-100">Reorder Recommendations ({forecastItems.length} items)</CardTitle>
+            <CardTitle className="text-stone-100">Recommandations de Réapprovisionnement ({forecastItems.length} articles)</CardTitle>
             <div className="flex gap-2">
-              <Button variant="outline" className="border-stone-700 text-stone-300">Export</Button>
-              <Button className="bg-emerald-600 hover:bg-emerald-700">Approve All</Button>
-              <Button className="bg-amber-600 hover:bg-amber-700">Generate PO</Button>
+              <Button variant="outline" className="border-stone-700 text-stone-300">Exporter</Button>
+              <Button className="bg-emerald-600 hover:bg-emerald-700">Approuver Tout</Button>
+              <Button className="bg-amber-600 hover:bg-amber-700">Générer Commande</Button>
             </div>
           </div>
         </CardHeader>
@@ -154,13 +154,13 @@ export default function ForecastsPage() {
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Item</TableHead>
-                  <TableHead className="text-stone-400 text-right">Current</TableHead>
-                  <TableHead className="text-stone-400 text-right">Predicted</TableHead>
-                  <TableHead className="text-stone-400 text-right">Reorder</TableHead>
-                  <TableHead className="text-stone-400 text-center">Confidence</TableHead>
-                  <TableHead className="text-stone-400">Supplier</TableHead>
-                  <TableHead className="text-stone-400 text-right">Est. Cost</TableHead>
+                  <TableHead className="text-stone-400">Article</TableHead>
+                  <TableHead className="text-stone-400 text-right">Actuel</TableHead>
+                  <TableHead className="text-stone-400 text-right">Prévu</TableHead>
+                  <TableHead className="text-stone-400 text-right">Réapprovisionner</TableHead>
+                  <TableHead className="text-stone-400 text-center">Confiance</TableHead>
+                  <TableHead className="text-stone-400">Fournisseur</TableHead>
+                  <TableHead className="text-stone-400 text-right">Coût Est.</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

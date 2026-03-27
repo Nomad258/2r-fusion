@@ -17,31 +17,31 @@ export function Footer() {
               2R FUSION
             </h3>
             <p className="text-stone-400 text-sm leading-relaxed mb-4">
-              Premium beachfront dining where Japanese precision meets Italian warmth.
+              La gastronomie premium où la précision japonaise rencontre la chaleur italienne.
             </p>
             <p className="text-xs text-stone-500 italic">
-              Made with love in Tangier
+              Créé avec amour à Tanger
             </p>
           </div>
 
           {/* Location & Hours */}
           <div>
             <h4 className="text-sm font-semibold text-stone-100 mb-4 uppercase tracking-wide">
-              Visit Us
+              Nous Visiter
             </h4>
             <div className="space-y-3 text-sm text-stone-400">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p>Tangier Beach</p>
-                  <p>Tangier, Morocco</p>
+                  <p>Plage de Tanger</p>
+                  <p>Tanger, Maroc</p>
                 </div>
               </div>
               <div>
-                <p className="font-semibold text-stone-300 mb-2">Hours</p>
-                <p>Lunch: 12:00 - 15:00</p>
-                <p>Dinner: 19:00 - 23:00</p>
-                <p className="text-xs text-stone-500 mt-1">Closed Mondays</p>
+                <p className="font-semibold text-stone-300 mb-2">Horaires</p>
+                <p>Déjeuner : 12:00 - 15:00</p>
+                <p>Dîner : 19:00 - 23:00</p>
+                <p className="text-xs text-stone-500 mt-1">Fermé le lundi</p>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export function Footer() {
           {/* Social & Links */}
           <div>
             <h4 className="text-sm font-semibold text-stone-100 mb-4 uppercase tracking-wide">
-              Follow Us
+              Nous Suivre
             </h4>
             <div className="flex gap-4 mb-6">
               <a
@@ -105,16 +105,16 @@ export function Footer() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-500">
-          <p>&copy; {currentYear} 2R Fusion. All rights reserved.</p>
+          <p>&copy; {currentYear} 2R Fusion. Tous droits réservés.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-gold-500 transition-colors">
-              Privacy Policy
+              Politique de Confidentialité
             </Link>
             <Link href="/terms" className="hover:text-gold-500 transition-colors">
-              Terms of Service
+              Conditions d&apos;Utilisation
             </Link>
             <Link href="/cookies" className="hover:text-gold-500 transition-colors">
-              Cookie Policy
+              Politique de Cookies
             </Link>
           </div>
         </div>

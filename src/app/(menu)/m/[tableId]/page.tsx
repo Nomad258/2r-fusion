@@ -10,8 +10,8 @@ interface MenuPageProps {
 }
 
 export const metadata: Metadata = {
-  title: "2R Fusion - Table Menu",
-  description: "Browse our premium dining menu",
+  title: "2R Fusion - Menu de Table",
+  description: "Parcourez notre menu de restauration premium",
 };
 
 export default async function MenuPage({ params }: MenuPageProps) {

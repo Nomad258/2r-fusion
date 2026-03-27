@@ -19,8 +19,8 @@ const timeSlots = [
 ];
 
 const occasions = [
-  "None", "Birthday", "Anniversary", "Business Dinner",
-  "Date Night", "Wedding Celebration", "Graduation", "Other",
+  "Aucune", "Anniversaire", "Anniversaire de Mariage", "Dîner d&apos;Affaires",
+  "Rendez-vous Romantique", "Célébration de Mariage", "Remise de Diplôme", "Autre",
 ];
 
 const partySizes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"];
@@ -52,19 +52,19 @@ export default function ReservationsPage() {
               <Check className="h-10 w-10 text-amber-400" />
             </div>
             <h1 className="text-4xl md:text-5xl font-heading font-bold">
-              Reservation <span className="text-amber-400">Confirmed</span>
+              Réservation <span className="text-amber-400">Confirmée</span>
             </h1>
             <p className="text-lg text-stone-300 max-w-xl mx-auto">
-              Thank you, {form.name}. We&apos;ve received your reservation request for {form.partySize} guest{form.partySize !== "1" ? "s" : ""} on {form.date} at {form.time}.
+              Merci, {form.name}. Nous avons bien reçu votre demande de réservation pour {form.partySize} invité{form.partySize !== "1" ? "s" : ""} le {form.date} à {form.time}.
             </p>
             <p className="text-stone-400">
-              A confirmation will be sent to {form.email}. For changes, call us at +212 539 000 000.
+              Une confirmation sera envoyée à {form.email}. Pour des modifications, appelez-nous au +212 539 000 000.
             </p>
             <Button
               onClick={() => setSubmitted(false)}
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-5"
             >
-              Make Another Reservation
+              Faire une Autre Réservation
             </Button>
           </div>
         </section>
@@ -78,13 +78,13 @@ export default function ReservationsPage() {
       <section className="relative section-spacing border-b border-stone-800 bg-gradient-to-b from-stone-900 to-stone-950 overflow-hidden">
         <div className="absolute top-20 right-1/4 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl" />
         <div className="container-premium text-center space-y-8 relative z-10 animate-fade-in">
-          <p className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Reserve Your Experience</p>
+          <p className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Réservez Votre Expérience</p>
           <h1 className="text-5xl md:text-7xl font-heading font-bold">
-            Book a <span className="text-amber-400">Table</span>
+            Réservez une <span className="text-amber-400">Table</span>
           </h1>
           <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto" />
           <p className="text-lg text-stone-300 max-w-2xl mx-auto">
-            Secure your place at Tangier&apos;s premier fusion dining destination. For parties over 10 or private events, please contact us directly.
+            Assurez votre place à la destination gastronomique fusion première de Tanger. Pour les groupes de plus de 10 personnes ou les événements privés, veuillez nous contacter directement.
           </p>
         </div>
       </section>
@@ -98,13 +98,13 @@ export default function ReservationsPage() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Personal Info */}
                 <div className="space-y-4">
-                  <h2 className="text-xl font-heading font-semibold text-amber-400">Guest Information</h2>
+                  <h2 className="text-xl font-heading font-semibold text-amber-400">Informations Invité</h2>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-sm text-stone-400">Full Name *</label>
+                      <label className="text-sm text-stone-400">Nom Complet *</label>
                       <Input
                         required
-                        placeholder="Your name"
+                        placeholder="Votre nom"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="bg-stone-900 border-stone-700 text-stone-100 focus:border-amber-500"
@@ -115,7 +115,7 @@ export default function ReservationsPage() {
                       <Input
                         required
                         type="email"
-                        placeholder="your@email.com"
+                        placeholder="votre@email.com"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="bg-stone-900 border-stone-700 text-stone-100 focus:border-amber-500"
@@ -123,7 +123,7 @@ export default function ReservationsPage() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm text-stone-400">Phone Number *</label>
+                    <label className="text-sm text-stone-400">Numéro de Téléphone *</label>
                     <Input
                       required
                       type="tel"
@@ -137,7 +137,7 @@ export default function ReservationsPage() {
 
                 {/* Reservation Details */}
                 <div className="space-y-4">
-                  <h2 className="text-xl font-heading font-semibold text-amber-400">Reservation Details</h2>
+                  <h2 className="text-xl font-heading font-semibold text-amber-400">Détails de la Réservation</h2>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm text-stone-400">Date *</label>
@@ -150,10 +150,10 @@ export default function ReservationsPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm text-stone-400">Time *</label>
+                      <label className="text-sm text-stone-400">Heure *</label>
                       <Select onValueChange={(v) => setForm({ ...form, time: v })}>
                         <SelectTrigger className="bg-stone-900 border-stone-700 text-stone-100">
-                          <SelectValue placeholder="Select time" />
+                          <SelectValue placeholder="Sélectionnez l&apos;heure" />
                         </SelectTrigger>
                         <SelectContent className="bg-stone-800 border-stone-700">
                           {timeSlots.map((t) => (
@@ -163,14 +163,14 @@ export default function ReservationsPage() {
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm text-stone-400">Party Size *</label>
+                      <label className="text-sm text-stone-400">Nombre d&apos;Invités *</label>
                       <Select onValueChange={(v) => setForm({ ...form, partySize: v })}>
                         <SelectTrigger className="bg-stone-900 border-stone-700 text-stone-100">
-                          <SelectValue placeholder="Guests" />
+                          <SelectValue placeholder="Invités" />
                         </SelectTrigger>
                         <SelectContent className="bg-stone-800 border-stone-700">
                           {partySizes.map((s) => (
-                            <SelectItem key={s} value={s}>{s} {s === "1" ? "Guest" : "Guests"}</SelectItem>
+                            <SelectItem key={s} value={s}>{s} {s === "1" ? "Invité" : "Invités"}</SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
@@ -180,7 +180,7 @@ export default function ReservationsPage() {
                     <label className="text-sm text-stone-400">Occasion</label>
                     <Select onValueChange={(v) => setForm({ ...form, occasion: v })}>
                       <SelectTrigger className="bg-stone-900 border-stone-700 text-stone-100">
-                        <SelectValue placeholder="Select occasion (optional)" />
+                        <SelectValue placeholder="Sélectionnez une occasion (facultatif)" />
                       </SelectTrigger>
                       <SelectContent className="bg-stone-800 border-stone-700">
                         {occasions.map((o) => (
@@ -190,9 +190,9 @@ export default function ReservationsPage() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm text-stone-400">Special Requests</label>
+                    <label className="text-sm text-stone-400">Demandes Spéciales</label>
                     <textarea
-                      placeholder="Dietary requirements, seating preferences, allergies, celebration details..."
+                      placeholder="Restrictions alimentaires, préférences de places, allergies, détails de célébration..."
                       value={form.requests}
                       onChange={(e) => setForm({ ...form, requests: e.target.value })}
                       rows={4}
@@ -205,10 +205,10 @@ export default function ReservationsPage() {
                   type="submit"
                   className="w-full bg-amber-600 hover:bg-amber-700 text-white py-6 text-lg font-semibold"
                 >
-                  Confirm Reservation
+                  Confirmer la Réservation
                 </Button>
                 <p className="text-xs text-stone-500 text-center">
-                  By submitting, you agree to our cancellation policy. Free cancellation up to 4 hours before your reservation.
+                  En envoyant, vous acceptez notre politique d&apos;annulation. Annulation gratuite jusqu&apos;à 4 heures avant votre réservation.
                 </p>
               </form>
             </div>
@@ -216,35 +216,35 @@ export default function ReservationsPage() {
             {/* Info Sidebar */}
             <div className="space-y-6">
               <Card className="bg-stone-900 border-stone-800 p-6 space-y-6">
-                <h3 className="text-lg font-heading font-semibold text-amber-400">Reservation Info</h3>
+                <h3 className="text-lg font-heading font-semibold text-amber-400">Informations Réservation</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Clock className="h-5 w-5 text-amber-400 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-stone-200">Service Hours</p>
-                      <p className="text-xs text-stone-400">Lunch: 12:00 - 15:00</p>
-                      <p className="text-xs text-stone-400">Dinner: 19:00 - 23:00</p>
+                      <p className="text-sm font-medium text-stone-200">Heures de Service</p>
+                      <p className="text-xs text-stone-400">Déjeuner: 12:00 - 15:00</p>
+                      <p className="text-xs text-stone-400">Dîner: 19:00 - 23:00</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Users className="h-5 w-5 text-amber-400 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-stone-200">Group Dining</p>
-                      <p className="text-xs text-stone-400">Parties of 10+ require direct booking. Contact our events team.</p>
+                      <p className="text-sm font-medium text-stone-200">Groupe de Dîneurs</p>
+                      <p className="text-xs text-stone-400">Les groupes de 10+ nécessitent une réservation directe. Contactez notre équipe événements.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Star className="h-5 w-5 text-amber-400 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-stone-200">VIP & Private Dining</p>
-                      <p className="text-xs text-stone-400">Exclusive rooms available for special occasions and corporate events.</p>
+                      <p className="text-sm font-medium text-stone-200">Dîner VIP et Privatisation</p>
+                      <p className="text-xs text-stone-400">Salons exclusifs disponibles pour occasions spéciales et événements corporatifs.</p>
                     </div>
                   </div>
                 </div>
               </Card>
 
               <Card className="bg-stone-900 border-stone-800 p-6 space-y-4">
-                <h3 className="text-lg font-heading font-semibold text-amber-400">Contact Us</h3>
+                <h3 className="text-lg font-heading font-semibold text-amber-400">Nous Contacter</h3>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Phone className="h-4 w-4 text-amber-400" />
@@ -258,9 +258,9 @@ export default function ReservationsPage() {
               </Card>
 
               <Card className="bg-gradient-to-br from-amber-900/20 to-stone-900 border-amber-500/20 p-6 space-y-3">
-                <h3 className="text-lg font-heading font-semibold text-amber-400">Cancellation Policy</h3>
+                <h3 className="text-lg font-heading font-semibold text-amber-400">Politique d&apos;Annulation</h3>
                 <p className="text-xs text-stone-400 leading-relaxed">
-                  Free cancellation up to 4 hours before your reservation. Late cancellations or no-shows may incur a charge of 200 MAD per guest. We understand plans change — please let us know as early as possible.
+                  Annulation gratuite jusqu&apos;à 4 heures avant votre réservation. Les annulations tardives ou les absences peuvent entraîner des frais de 200 MAD par personne. Nous comprenons que les plans changent — veuillez nous le faire savoir dès que possible.
                 </p>
               </Card>
             </div>

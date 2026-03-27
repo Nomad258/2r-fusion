@@ -115,8 +115,8 @@ export default function InventoryPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Inventory Management"
-        description="Monitor and manage stock levels"
+        title="Gestion de l&apos;Inventaire"
+        description="Surveiller et gérer les niveaux de stock"
       />
 
       {/* Summary Cards */}
@@ -125,7 +125,7 @@ export default function InventoryPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Total Items</p>
+                <p className="text-sm text-stone-400 mb-1">Total Artikelen</p>
                 <p className="text-3xl font-semibold text-stone-100">
                   {inventory.length}
                 </p>
@@ -137,16 +137,16 @@ export default function InventoryPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Low Stock Items</p>
+              <p className="text-sm text-stone-400 mb-1">Articles en Stock Faible</p>
               <p className="text-3xl font-semibold text-yellow-400">{lowStock}</p>
-              <p className="text-xs text-stone-400 mt-2">Need reordering</p>
+              <p className="text-xs text-stone-400 mt-2">Nécessite réapprovisionnement</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Total Value</p>
+              <p className="text-sm text-stone-400 mb-1">Valeur Totale</p>
               <p className="text-3xl font-semibold text-stone-100">
                 {(totalValue / 1000).toFixed(0)}K
               </p>
@@ -157,9 +157,9 @@ export default function InventoryPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Inventory Health</p>
+              <p className="text-sm text-stone-400 mb-1">Santé de l&apos;Inventaire</p>
               <p className="text-3xl font-semibold text-emerald-400">75%</p>
-              <p className="text-xs text-stone-400 mt-2">Above minimum</p>
+              <p className="text-xs text-stone-400 mt-2">Au-dessus du minimum</p>
             </div>
           </CardContent>
         </Card>
@@ -171,33 +171,33 @@ export default function InventoryPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Items
+                Rechercher Articles
               </label>
               <Input
-                placeholder="Search by item name..."
+                placeholder="Rechercher par nom d&apos;article..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <div className="w-full md:w-48">
               <label className="text-sm text-stone-400 block mb-2">
-                Category
+                Catégorie
               </label>
               <Select defaultValue="all">
                 <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-800 border-stone-700">
-                  <SelectItem value="all">All Categories</SelectItem>
-                  <SelectItem value="seafood">Seafood</SelectItem>
-                  <SelectItem value="meat">Meat</SelectItem>
-                  <SelectItem value="produce">Produce</SelectItem>
-                  <SelectItem value="spices">Spices</SelectItem>
-                  <SelectItem value="oils">Oils</SelectItem>
+                  <SelectItem value="all">Toutes les Catégories</SelectItem>
+                  <SelectItem value="seafood">Fruits de Mer</SelectItem>
+                  <SelectItem value="meat">Viande</SelectItem>
+                  <SelectItem value="produce">Produits Frais</SelectItem>
+                  <SelectItem value="spices">Épices</SelectItem>
+                  <SelectItem value="oils">Huiles</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              + New Item
+              + Nouvel Article
             </Button>
           </div>
         </CardContent>
@@ -206,19 +206,19 @@ export default function InventoryPage() {
       {/* Inventory Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Inventory Items</CardTitle>
+          <CardTitle className="text-stone-100">Articles de l&apos;Inventaire</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Item</TableHead>
-                  <TableHead className="text-stone-400">Category</TableHead>
-                  <TableHead className="text-stone-400">Current Stock</TableHead>
-                  <TableHead className="text-stone-400">Min Stock</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
-                  <TableHead className="text-stone-400">Value</TableHead>
+                  <TableHead className="text-stone-400">Article</TableHead>
+                  <TableHead className="text-stone-400">Catégorie</TableHead>
+                  <TableHead className="text-stone-400">Stock Actuel</TableHead>
+                  <TableHead className="text-stone-400">Stock Min</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
+                  <TableHead className="text-stone-400">Valeur</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -263,7 +263,7 @@ export default function InventoryPage() {
                         className="text-amber-400 hover:text-amber-300"
                         asChild
                       >
-                        <Link href={`/admin/inventory/${item.id}`}>View</Link>
+                        <Link href={`/admin/inventory/${item.id}`}>Voir</Link>
                       </Button>
                     </TableCell>
                   </TableRow>

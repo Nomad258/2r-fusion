@@ -19,7 +19,7 @@ const employeeData = {
   firstName: "Ahmed",
   lastName: "Bennani",
   position: "Chef de Cuisine",
-  department: "Kitchen",
+  department: "Cuisine",
   status: "ACTIVE",
   hireDate: "2023-01-15",
   phone: "+212 612345678",
@@ -27,7 +27,7 @@ const employeeData = {
   hourlyRate: 150.0,
   emergencyContact: "Fatima Bennani",
   emergencyPhone: "+212 612345679",
-  notes: "Senior kitchen staff, excellent food quality oversight",
+  notes: "Personnel de cuisine senior, excellent contrôle de la qualité culinaire",
 };
 
 const shiftHistory = [
@@ -58,8 +58,8 @@ const shiftHistory = [
   {
     id: "4",
     date: "2026-03-24",
-    startTime: "Off",
-    endTime: "Off",
+    startTime: "Repos",
+    endTime: "Repos",
     status: "OFF",
     hours: 0,
   },
@@ -71,21 +71,21 @@ const performanceNotes = [
     date: "2026-03-25",
     type: "COMMENDATION",
     author: "Mohammad Khaldi",
-    note: "Excellent execution of the chef special menu. Plates were perfect.",
+    note: "Exécution excellente du menu spécial du chef. Les assiettes étaient parfaites.",
   },
   {
     id: "2",
     date: "2026-03-22",
     type: "GENERAL",
     author: "Layla Ouhammou",
-    note: "Worked well during high-volume service. Quick adaptation to menu changes.",
+    note: "Travail exemplaire pendant le service à fort volume. Adaptation rapide aux changements du menu.",
   },
   {
     id: "3",
     date: "2026-03-18",
     type: "TRAINING",
     author: "Mohammad Khaldi",
-    note: "Completed advanced plating techniques workshop.",
+    note: "Atelier de techniques de présentation avancées complété.",
   },
 ];
 
@@ -95,7 +95,7 @@ const anomalies = [
     type: "QUALITY_CONCERN",
     severity: "LOW",
     date: "2026-03-20",
-    description: "One plate returned for temperature on high-volume night",
+    description: "Une assiette retournée pour température lors d&apos;une nuit à fort volume",
     status: "RESOLVED",
   },
 ];
@@ -121,9 +121,9 @@ export default function EmployeeDetailPage({
         <CardHeader>
           <div className="flex items-start justify-between">
             <div>
-              <CardTitle className="text-stone-100">Employee Information</CardTitle>
+              <CardTitle className="text-stone-100">Informations Employé</CardTitle>
               <p className="text-xs text-stone-400 mt-1">
-                Personal and employment details
+                Détails personnels et d&apos;emploi
               </p>
             </div>
             <Badge
@@ -133,7 +133,7 @@ export default function EmployeeDetailPage({
                   : "bg-red-900/30 text-red-200"
               }
             >
-              {employeeData.status}
+              {employeeData.status === "ACTIVE" ? "ACTIF" : "INACTIF"}
             </Badge>
           </div>
         </CardHeader>
@@ -141,20 +141,20 @@ export default function EmployeeDetailPage({
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-stone-400 mb-1">Position</p>
+                <p className="text-xs text-stone-400 mb-1">Poste</p>
                 <p className="text-stone-100 font-medium">
                   {employeeData.position}
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Department</p>
+                <p className="text-xs text-stone-400 mb-1">Département</p>
                 <p className="text-stone-100 font-medium">
                   {employeeData.department}
                 </p>
               </div>
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> Phone
+                  <Phone className="h-4 w-4" /> Téléphone
                 </p>
                 <p className="text-stone-100">{employeeData.phone}</p>
               </div>
@@ -168,23 +168,23 @@ export default function EmployeeDetailPage({
             <div className="space-y-4">
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <Calendar className="h-4 w-4" /> Hire Date
+                  <Calendar className="h-4 w-4" /> Date d&apos;Embauche
                 </p>
                 <p className="text-stone-100 font-medium">
                   {employeeData.hireDate}
                 </p>
                 <p className="text-xs text-stone-500 mt-1">
-                  ({Math.floor((Date.now() - new Date(employeeData.hireDate).getTime()) / (1000 * 60 * 60 * 24 * 365))} years)
+                  ({Math.floor((Date.now() - new Date(employeeData.hireDate).getTime()) / (1000 * 60 * 60 * 24 * 365))} ans)
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Hourly Rate</p>
+                <p className="text-xs text-stone-400 mb-1">Taux Horaire</p>
                 <p className="text-stone-100 font-medium">
-                  {employeeData.hourlyRate.toFixed(2)} MAD/hour
+                  {employeeData.hourlyRate.toFixed(2)} MAD/heure
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Emergency Contact</p>
+                <p className="text-xs text-stone-400 mb-1">Contact d&apos;Urgence</p>
                 <p className="text-stone-100">{employeeData.emergencyContact}</p>
                 <p className="text-xs text-stone-500">{employeeData.emergencyPhone}</p>
               </div>
@@ -193,7 +193,7 @@ export default function EmployeeDetailPage({
 
           {employeeData.notes && (
             <div className="bg-stone-800/50 border border-stone-700 rounded p-3 mt-4">
-              <p className="text-xs text-stone-400 mb-1">Notes</p>
+              <p className="text-xs text-stone-400 mb-1">Remarques</p>
               <p className="text-stone-100 text-sm">{employeeData.notes}</p>
             </div>
           )}
@@ -205,22 +205,22 @@ export default function EmployeeDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Hours This Week</p>
+              <p className="text-xs text-stone-400 mb-1">Heures Cette Semaine</p>
               <p className="text-2xl font-semibold text-stone-100">
                 {totalHours}
               </p>
-              <p className="text-xs text-stone-400 mt-2">4 shifts</p>
+              <p className="text-xs text-stone-400 mt-2">4 quarts</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Performance Notes</p>
+              <p className="text-xs text-stone-400 mb-1">Notes de Performance</p>
               <p className="text-2xl font-semibold text-stone-100">
                 {performanceNotes.length}
               </p>
-              <p className="text-xs text-stone-400 mt-2">documented</p>
+              <p className="text-xs text-stone-400 mt-2">documentées</p>
             </div>
           </CardContent>
         </Card>
@@ -231,16 +231,16 @@ export default function EmployeeDetailPage({
               <p className="text-2xl font-semibold text-amber-400">
                 {anomalies.length}
               </p>
-              <p className="text-xs text-stone-400 mt-2">flagged</p>
+              <p className="text-xs text-stone-400 mt-2">signalées</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Reliability</p>
+              <p className="text-xs text-stone-400 mb-1">Fiabilité</p>
               <p className="text-2xl font-semibold text-emerald-400">98%</p>
-              <p className="text-xs text-stone-400 mt-2">attendance</p>
+              <p className="text-xs text-stone-400 mt-2">présence</p>
             </div>
           </CardContent>
         </Card>
@@ -251,7 +251,7 @@ export default function EmployeeDetailPage({
         <CardHeader>
           <CardTitle className="text-stone-100 flex items-center gap-2">
             <Clock className="h-5 w-5" />
-            Recent Shift History
+            Historique Récent des Quarts
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -260,10 +260,10 @@ export default function EmployeeDetailPage({
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
                   <TableHead className="text-stone-400">Date</TableHead>
-                  <TableHead className="text-stone-400">Start Time</TableHead>
-                  <TableHead className="text-stone-400">End Time</TableHead>
-                  <TableHead className="text-stone-400">Hours</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
+                  <TableHead className="text-stone-400">Heure de Début</TableHead>
+                  <TableHead className="text-stone-400">Heure de Fin</TableHead>
+                  <TableHead className="text-stone-400">Heures</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -294,7 +294,7 @@ export default function EmployeeDetailPage({
       {/* Performance Notes */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Performance Notes</CardTitle>
+          <CardTitle className="text-stone-100">Notes de Performance</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {performanceNotes.map((note) => (
@@ -305,12 +305,12 @@ export default function EmployeeDetailPage({
               <div className="flex items-start justify-between mb-2">
                 <div>
                   <p className="text-sm font-medium text-stone-100">
-                    {note.type === "COMMENDATION" && "Commendation"}
-                    {note.type === "GENERAL" && "Performance Note"}
-                    {note.type === "TRAINING" && "Training"}
+                    {note.type === "COMMENDATION" && "Félicitations"}
+                    {note.type === "GENERAL" && "Note de Performance"}
+                    {note.type === "TRAINING" && "Formation"}
                   </p>
                   <p className="text-xs text-stone-400">
-                    {note.date} by {note.author}
+                    {note.date} par {note.author}
                   </p>
                 </div>
                 <Badge
@@ -320,7 +320,9 @@ export default function EmployeeDetailPage({
                       : "bg-stone-700/50 text-stone-200"
                   }
                 >
-                  {note.type}
+                  {note.type === "COMMENDATION" && "Félicitations"}
+                  {note.type === "GENERAL" && "Général"}
+                  {note.type === "TRAINING" && "Formation"}
                 </Badge>
               </div>
               <p className="text-stone-300">{note.note}</p>
@@ -335,7 +337,7 @@ export default function EmployeeDetailPage({
           <CardHeader>
             <CardTitle className="text-stone-100 flex items-center gap-2">
               <AlertTriangle className="h-5 w-5 text-amber-400" />
-              Flagged Anomalies
+              Anomalies Signalées
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -377,18 +379,18 @@ export default function EmployeeDetailPage({
 
       {/* Action Buttons */}
       <div className="flex gap-3 pt-4">
-        <Button className="bg-amber-600 hover:bg-amber-700">Edit Employee</Button>
+        <Button className="bg-amber-600 hover:bg-amber-700">Modifier Employé</Button>
         <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-          View Schedule
+          Voir Horaire
         </Button>
         <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-          Add Performance Note
+          Ajouter Note de Performance
         </Button>
         <Button
           variant="outline"
           className="border-red-900 text-red-400 hover:bg-red-900/20"
         >
-          Deactivate
+          Désactiver
         </Button>
       </div>
     </div>

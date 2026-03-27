@@ -32,14 +32,14 @@ interface MenuType {
     const fetchMenu = async () => {
       try {
         const response = await fetch("/api/menu");
-        if (!response.ok) throw new Error("Failed to fetch menu");
+        if (!response.ok) throw new Error("Erreur de chargement du menu");
         const data = await response.json();
         setMenu(data);
         if (data.categories && data.categories.length > 0) {
           setActiveCategory(data.categories[0].id);
         }
       } catch (err: unknown) {
-        setError(err instanceof Error ? err.message : "Failed to load menu");
+        setError(err instanceof Error ? err.message : "Erreur de chargement du menu");
       } finally {
         setLoading(false);
       }
@@ -53,7 +53,7 @@ interface MenuType {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-gold-500/20 border-t-gold-500 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-stone-400">Loading menu...</p>
+          <p className="text-stone-400">Chargement du menu...</p>
         </div>
       </div>
     );
@@ -66,7 +66,7 @@ interface MenuType {
       <section className="section-spacing border-b border-stone-800 bg-gradient-to-b from-stone-900 to-stone-950">
         <div className="container-premium text-center space-y-8 animate-fade-in">
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold">Our Menu</h1>
+            <h1 className="text-5xl md:text-6xl font-heading font-bold">Notre Menu</h1>
             <div className="h-1 w-16 bg-gradient-to-r from-gold-500 to-gold-700 mx-auto" />
             {menu?.menuName && <p className="text-lg text-stone-300">{menu.menuName}</p>}
           </div>
@@ -121,12 +121,12 @@ interface MenuType {
                         <div className="flex flex-wrap gap-3 pt-2">
                           {dish.isChefSpecial && (
                             <span className="px-3 py-1 bg-gold-500/20 border border-gold-500/50 rounded text-gold-400 text-xs font-semibold">
-                              Chef&apos;s Special
+                              Spécialité du Chef
                             </span>
                           )}
                           {dish.isNew && (
                             <span className="px-3 py-1 bg-bronze-500/20 border border-bronze-500/50 rounded text-bronze-400 text-xs font-semibold">
-                              New
+                              Nouveau
                             </span>
                           )}
                         </div>

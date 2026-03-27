@@ -14,12 +14,12 @@ const getDietaryIcons = (tags: string | null) => {
   if (!tags) return null;
   const tagsArray = tags.split(",").map((t) => t.trim());
   const icons: { [key: string]: { label: string; symbol: string } } = {
-    vegan: { label: "Vegan", symbol: "🌱" },
-    vegetarian: { label: "Vegetarian", symbol: "🥬" },
-    glutenfree: { label: "Gluten Free", symbol: "🌾" },
-    dairyfree: { label: "Dairy Free", symbol: "🥛" },
-    spicy: { label: "Spicy", symbol: "🌶️" },
-    nuts: { label: "Contains Nuts", symbol: "🥜" },
+    vegan: { label: "Végan", symbol: "🌱" },
+    vegetarian: { label: "Végétarien", symbol: "🥬" },
+    glutenfree: { label: "Sans Gluten", symbol: "🌾" },
+    dairyfree: { label: "Sans Produits Laitiers", symbol: "🥛" },
+    spicy: { label: "Épicé", symbol: "🌶️" },
+    nuts: { label: "Contient des Noix", symbol: "🥜" },
   };
 
   return (
@@ -58,17 +58,17 @@ export function DishCard({ dish, onSelect }: DishCardProps) {
         <div className="absolute top-3 right-3 flex flex-wrap gap-2 justify-end">
           {dish.isChefSpecial && (
             <Badge className="bg-amber-900 text-amber-50 hover:bg-amber-800 text-xs">
-              Chef&apos;s Special
+              Spécialité du Chef
             </Badge>
           )}
           {dish.isNew && (
             <Badge className="bg-emerald-900 text-emerald-50 hover:bg-emerald-800 text-xs">
-              New
+              Nouveau
             </Badge>
           )}
           {!dish.isAvailable && (
             <Badge className="bg-red-900 text-red-50 hover:bg-red-800 text-xs">
-              Unavailable
+              Indisponible
             </Badge>
           )}
         </div>

@@ -45,11 +45,11 @@ const batches = [
 ];
 
 const movements = [
-  { date: "2026-03-25", type: "USAGE", qty: 7, note: "3 orders - Hammour Grilled" },
-  { date: "2026-03-25", type: "USAGE", qty: 5, note: "2 orders - Hammour Tagine" },
-  { date: "2026-03-24", type: "USAGE", qty: 8, note: "4 orders - Hammour Grilled" },
-  { date: "2026-03-23", type: "PURCHASE", qty: 20, note: "Delivery from Atlantic Fish" },
-  { date: "2026-03-22", type: "USAGE", qty: 6, note: "3 orders - Hammour Grilled" },
+  { date: "2026-03-25", type: "USAGE", qty: 7, note: "3 commandes - Hammour Grilled" },
+  { date: "2026-03-25", type: "USAGE", qty: 5, note: "2 commandes - Hammour Tagine" },
+  { date: "2026-03-24", type: "USAGE", qty: 8, note: "4 commandes - Hammour Grilled" },
+  { date: "2026-03-23", type: "PURCHASE", qty: 20, note: "Livraison de Atlantic Fish" },
+  { date: "2026-03-22", type: "USAGE", qty: 6, note: "3 commandes - Hammour Grilled" },
 ];
 
 export default function InventoryDetailPage({ params }: { params: { id: string } }) {
@@ -57,7 +57,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
     <div className="space-y-6">
       <PageHeader
         title="Hammour Fillet"
-        description="Seafood • 45 kg • Status: LOW"
+        description="Fruits de Mer • 45 kg • Statut: Stock Faible"
       />
 
       {/* Key Info */}
@@ -65,7 +65,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Current Stock</p>
+              <p className="text-sm text-stone-400 mb-1">Stock Actuel</p>
               <p className="text-3xl font-semibold text-stone-100">45</p>
               <p className="text-xs text-stone-400 mt-2">kg</p>
             </div>
@@ -74,7 +74,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Minimum Level</p>
+              <p className="text-sm text-stone-400 mb-1">Niveau Minimum</p>
               <p className="text-3xl font-semibold text-yellow-400">50</p>
               <p className="text-xs text-stone-400 mt-2">kg</p>
             </div>
@@ -83,7 +83,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Stock Value</p>
+              <p className="text-sm text-stone-400 mb-1">Valeur du Stock</p>
               <p className="text-3xl font-semibold text-amber-400">9,000</p>
               <p className="text-xs text-stone-400 mt-2">MAD</p>
             </div>
@@ -92,7 +92,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Avg Daily Usage</p>
+              <p className="text-sm text-stone-400 mb-1">Utilisation Moyenne Quotidienne</p>
               <p className="text-3xl font-semibold text-stone-100">6.5</p>
               <p className="text-xs text-stone-400 mt-2">kg</p>
             </div>
@@ -103,7 +103,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
       {/* Stock Chart */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Stock Level Trend</CardTitle>
+          <CardTitle className="text-stone-100">Tendance du Niveau de Stock</CardTitle>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
@@ -133,19 +133,19 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
       {/* Batches */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Current Batches</CardTitle>
+          <CardTitle className="text-stone-100">Lots Actuels</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Batch ID</TableHead>
-                  <TableHead className="text-stone-400">Quantity</TableHead>
-                  <TableHead className="text-stone-400">Supplier</TableHead>
-                  <TableHead className="text-stone-400">Date Received</TableHead>
-                  <TableHead className="text-stone-400">Expiry Date</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
+                  <TableHead className="text-stone-400">ID Lot</TableHead>
+                  <TableHead className="text-stone-400">Quantité</TableHead>
+                  <TableHead className="text-stone-400">Fournisseur</TableHead>
+                  <TableHead className="text-stone-400">Date de Réception</TableHead>
+                  <TableHead className="text-stone-400">Date d&apos;Expiration</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -179,7 +179,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
                               : "bg-emerald-900/30 text-emerald-200"
                           }
                         >
-                          {isExpiringSoon ? "EXPIRING SOON" : "GOOD"}
+                          {isExpiringSoon ? "EXPIRE BIENTÔT" : "BON"}
                         </Badge>
                       </TableCell>
                     </TableRow>
@@ -194,7 +194,7 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
       {/* Movement History */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Movement History</CardTitle>
+          <CardTitle className="text-stone-100">Historique des Mouvements</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -212,10 +212,10 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
                           : "bg-amber-900/30 text-amber-200"
                       }
                     >
-                      {movement.type}
+                      {movement.type === "PURCHASE" ? "ACHAT" : "UTILISATION"}
                     </Badge>
                     <p className="text-sm font-medium text-stone-100">
-                      {movement.qty} {movement.type === "PURCHASE" ? "kg added" : "kg used"}
+                      {movement.qty} {movement.type === "PURCHASE" ? "kg ajoutés" : "kg utilisés"}
                     </p>
                   </div>
                   <p className="text-xs text-stone-400">{movement.note}</p>
@@ -232,13 +232,13 @@ export default function InventoryDetailPage({ params }: { params: { id: string }
         <CardContent className="pt-6">
           <div className="flex flex-wrap gap-3">
             <Button className="bg-amber-600 hover:bg-amber-700">
-              Adjust Stock
+              Ajuster Stock
             </Button>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              New Purchase Order
+              Nouvelle Commande d&apos;Achat
             </Button>
             <Button variant="outline" className="border-stone-700">
-              View Linked Dishes
+              Voir Plats Liés
             </Button>
           </div>
         </CardContent>

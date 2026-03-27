@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "2R Fusion | Premium Beachfront Dining, Tangier",
+  title: "2R Fusion | Gastronomie Premium face à la Mer, Tanger",
   description:
-    "Experience culinary excellence at 2R Fusion in Tangier, Morocco. Premium beachfront dining with international fusion cuisine.",
+    "Découvrez l&apos;excellence culinaire à 2R Fusion à Tanger, Maroc. Gastronomie premium face à la mer avec une cuisine fusion internationale.",
   keywords: [
     "restaurant",
-    "dining",
-    "Tangier",
-    "Morocco",
-    "fusion cuisine",
-    "premium dining",
-    "beachfront",
+    "gastronomie",
+    "Tanger",
+    "Maroc",
+    "cuisine fusion",
+    "gastronomie premium",
+    "face à la mer",
   ],
   authors: [{ name: "2R Fusion" }],
   creator: "2R Fusion",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "fr_FR",
     url: "https://2rfusion.com",
     siteName: "2R Fusion",
-    title: "2R Fusion | Premium Beachfront Dining",
+    title: "2R Fusion | Gastronomie Premium face à la Mer",
     description:
-      "Experience culinary excellence at 2R Fusion in Tangier, Morocco.",
+      "Découvrez l&apos;excellence culinaire à 2R Fusion à Tanger, Maroc.",
   },
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className="bg-stone-950 text-stone-100">
         {children}
       </body>

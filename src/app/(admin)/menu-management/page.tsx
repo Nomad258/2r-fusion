@@ -80,12 +80,12 @@ export default function MenuManagementPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <PageHeader
-          title="Menu Management"
-          description="Manage categories and dishes"
+          title="Gestion du Menu"
+          description="Gérer les catégories et les plats"
         />
         <Button className="bg-amber-600 hover:bg-amber-700">
           <Plus className="h-4 w-4 mr-2" />
-          New Category
+          Nouvelle Catégorie
         </Button>
       </div>
 
@@ -102,12 +102,12 @@ export default function MenuManagementPage() {
                     </CardTitle>
                     {category.vipOnly && (
                       <Badge className="bg-amber-900/30 text-amber-200">
-                        VIP ONLY
+                        VIP UNIQUEMENT
                       </Badge>
                     )}
                   </div>
                   <p className="text-sm text-stone-400">
-                    {category.items} items • Position {category.order}
+                    {category.items} articles • Position {category.order}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -146,7 +146,7 @@ export default function MenuManagementPage() {
                             variant="secondary"
                             className="bg-red-900/30 text-red-200 text-xs"
                           >
-                            UNAVAILABLE
+                            INDISPONIBLE
                           </Badge>
                         )}
                       </div>
@@ -160,7 +160,7 @@ export default function MenuManagementPage() {
                         asChild
                       >
                         <Link href={`/admin/menu-management/dishes/${dish.id}`}>
-                          Edit
+                          Modifier
                         </Link>
                       </Button>
                       <Switch checked={dish.available} />
@@ -172,7 +172,7 @@ export default function MenuManagementPage() {
                 variant="outline"
                 className="w-full mt-4 border-stone-700 text-amber-400"
               >
-                + Add Dish
+                + Ajouter Plat
               </Button>
             </CardContent>
           </Card>

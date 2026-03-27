@@ -20,19 +20,19 @@ import {
 
 const spendingData = [
   { month: "Jan", spent: 2100 },
-  { month: "Feb", spent: 1850 },
+  { month: "Fév", spent: 1850 },
   { month: "Mar", spent: 2400 },
-  { month: "Apr", spent: 2800 },
-  { month: "May", spent: 3100 },
-  { month: "Jun", spent: 2950 },
+  { month: "Avr", spent: 2800 },
+  { month: "Mai", spent: 3100 },
+  { month: "Juin", spent: 2950 },
 ];
 
 const visitHistory = [
-  { id: 1, date: "2026-03-25", time: "20:15", party: 4, amount: 850, notes: "Premium experience" },
-  { id: 2, date: "2026-03-18", time: "19:45", party: 4, amount: 920, notes: "Special request: window table" },
-  { id: 3, date: "2026-03-10", time: "20:30", party: 4, amount: 780, notes: "Regular booking" },
-  { id: 4, date: "2026-02-28", time: "19:00", party: 2, amount: 620, notes: "Date night" },
-  { id: 5, date: "2026-02-14", time: "20:00", party: 4, amount: 950, notes: "Anniversary celebration" },
+  { id: 1, date: "2026-03-25", time: "20:15", party: 4, amount: 850, notes: "Expérience Premium" },
+  { id: 2, date: "2026-03-18", time: "19:45", party: 4, amount: 920, notes: "Demande spéciale : table près de la fenêtre" },
+  { id: 3, date: "2026-03-10", time: "20:30", party: 4, amount: 780, notes: "Réservation régulière" },
+  { id: 4, date: "2026-02-28", time: "19:00", party: 2, amount: 620, notes: "Soirée en couple" },
+  { id: 5, date: "2026-02-14", time: "20:00", party: 4, amount: 950, notes: "Célébration anniversaire" },
 ];
 
 const reservationHistory = [
@@ -45,15 +45,15 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Guest Profile"
-        description="Detailed guest information and history"
+        title="Profil Client"
+        description="Informations détaillées et historique du client"
       />
 
       {/* Profile Card */}
       <div className="grid gap-6 md:grid-cols-3">
         <Card className="bg-stone-900 border-stone-800 md:col-span-2">
           <CardHeader>
-            <CardTitle className="text-stone-100">Profile Information</CardTitle>
+            <CardTitle className="text-stone-100">Informations Profil</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex items-start justify-between">
@@ -61,7 +61,7 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
                 <div className="flex items-center gap-3">
                   <User className="h-5 w-5 text-amber-400" />
                   <div>
-                    <p className="text-sm text-stone-400">Name</p>
+                    <p className="text-sm text-stone-400">Nom</p>
                     <p className="text-lg font-semibold text-stone-100">
                       Ahmed Bennani
                     </p>
@@ -70,7 +70,7 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-amber-400" />
                   <div>
-                    <p className="text-sm text-stone-400">Phone</p>
+                    <p className="text-sm text-stone-400">Téléphone</p>
                     <p className="text-lg font-semibold text-stone-100">
                       +212 612345678
                     </p>
@@ -96,25 +96,25 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
         {/* Key Metrics */}
         <Card className="bg-stone-900 border-stone-800">
           <CardHeader>
-            <CardTitle className="text-stone-100">Key Metrics</CardTitle>
+            <CardTitle className="text-stone-100">Métriques Clés</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <p className="text-sm text-stone-400">Total Visits</p>
+              <p className="text-sm text-stone-400">Total Visites</p>
               <p className="text-3xl font-semibold text-stone-100">24</p>
             </div>
             <div>
-              <p className="text-sm text-stone-400">Total Spent</p>
+              <p className="text-sm text-stone-400">Total Dépensé</p>
               <p className="text-3xl font-semibold text-amber-400">18,500</p>
               <p className="text-xs text-stone-400">MAD</p>
             </div>
             <div>
-              <p className="text-sm text-stone-400">Avg per Visit</p>
+              <p className="text-sm text-stone-400">Moy par Visite</p>
               <p className="text-2xl font-semibold text-stone-100">771 MAD</p>
             </div>
             <div>
-              <p className="text-sm text-stone-400">Member Since</p>
-              <p className="text-sm text-stone-100">Jan 15, 2023</p>
+              <p className="text-sm text-stone-400">Membre Depuis</p>
+              <p className="text-sm text-stone-100">15 Jan 2023</p>
             </div>
           </CardContent>
         </Card>
@@ -125,7 +125,7 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
         <CardHeader>
           <CardTitle className="text-stone-100 flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-amber-400" />
-            Spending Trend
+            Tendance de Dépense
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -156,16 +156,16 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
       {/* Tabs Section */}
       <Tabs defaultValue="visits" className="space-y-6">
         <TabsList className="bg-stone-800 border-stone-700">
-          <TabsTrigger value="visits">Visit History</TabsTrigger>
-          <TabsTrigger value="reservations">Reservations</TabsTrigger>
-          <TabsTrigger value="tags">Tags & Notes</TabsTrigger>
+          <TabsTrigger value="visits">Historique Visite</TabsTrigger>
+          <TabsTrigger value="reservations">Réservations</TabsTrigger>
+          <TabsTrigger value="tags">Étiquettes & Notes</TabsTrigger>
         </TabsList>
 
         {/* Visit History */}
         <TabsContent value="visits">
           <Card className="bg-stone-900 border-stone-800">
             <CardHeader>
-              <CardTitle className="text-stone-100">Visit History</CardTitle>
+              <CardTitle className="text-stone-100">Historique Visite</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
@@ -173,9 +173,9 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
                   <TableHeader>
                     <TableRow className="border-stone-800 hover:bg-transparent">
                       <TableHead className="text-stone-400">Date</TableHead>
-                      <TableHead className="text-stone-400">Time</TableHead>
-                      <TableHead className="text-stone-400">Party</TableHead>
-                      <TableHead className="text-stone-400">Amount</TableHead>
+                      <TableHead className="text-stone-400">Heure</TableHead>
+                      <TableHead className="text-stone-400">Groupe</TableHead>
+                      <TableHead className="text-stone-400">Montant</TableHead>
                       <TableHead className="text-stone-400">Notes</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -213,18 +213,18 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
         <TabsContent value="reservations">
           <Card className="bg-stone-900 border-stone-800">
             <CardHeader>
-              <CardTitle className="text-stone-100">Reservation History</CardTitle>
+              <CardTitle className="text-stone-100">Historique Réservation</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
                     <TableRow className="border-stone-800 hover:bg-transparent">
-                      <TableHead className="text-stone-400">Reservation</TableHead>
+                      <TableHead className="text-stone-400">Réservation</TableHead>
                       <TableHead className="text-stone-400">Date</TableHead>
-                      <TableHead className="text-stone-400">Time</TableHead>
-                      <TableHead className="text-stone-400">Party</TableHead>
-                      <TableHead className="text-stone-400">Status</TableHead>
+                      <TableHead className="text-stone-400">Heure</TableHead>
+                      <TableHead className="text-stone-400">Groupe</TableHead>
+                      <TableHead className="text-stone-400">Statut</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -258,7 +258,7 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="bg-stone-900 border-stone-800">
               <CardHeader>
-                <CardTitle className="text-stone-100">Tags</CardTitle>
+                <CardTitle className="text-stone-100">Étiquettes</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex flex-wrap gap-2">
@@ -274,26 +274,26 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
                   )}
                 </div>
                 <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  + Add Tag
+                  + Ajouter Étiquette
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="bg-stone-900 border-stone-800">
               <CardHeader>
-                <CardTitle className="text-stone-100">Risk Score</CardTitle>
+                <CardTitle className="text-stone-100">Score Risque</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <p className="text-3xl font-semibold text-stone-100">2/10</p>
-                    <p className="text-sm text-stone-400">Low Risk</p>
+                    <p className="text-sm text-stone-400">Risque Bas</p>
                   </div>
                   <AlertCircle className="h-8 w-8 text-emerald-400" />
                 </div>
                 <p className="text-sm text-stone-400">
-                  Excellent customer. No complaints, consistent spending, high
-                  lifetime value.
+                  Excellent client. Pas de plaintes, dépenses régulières, grande valeur
+                  client.
                 </p>
               </CardContent>
             </Card>
@@ -306,13 +306,13 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
             <CardContent>
               <div className="bg-stone-800/50 rounded-lg p-4 min-h-32 text-stone-400">
                 <p>
-                  Prefers window seating. Celebrates anniversaries frequently.
-                  Often brings colleagues for business dinners. Appreciates
-                  wine pairings. Has recommended friends (3+ referrals).
+                  Préfère les places près de la fenêtre. Célèbre les anniversaires
+                  régulièrement. Amène souvent des collègues pour dîners d&apos;affaires.
+                  Apprécie les accords mets-vins. A recommandé des amis (3+ recommandations).
                 </p>
               </div>
               <Button className="w-full mt-4 bg-amber-600 hover:bg-amber-700">
-                Edit Notes
+                Modifier Notes
               </Button>
             </CardContent>
           </Card>
@@ -324,16 +324,16 @@ export default function GuestDetailPage({ params }: { params: { id: string } }) 
         <CardContent className="pt-6">
           <div className="flex flex-wrap gap-3">
             <Button className="bg-amber-600 hover:bg-amber-700">
-              Create Reservation
+              Créer Réservation
             </Button>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              Send Message
+              Envoyer Message
             </Button>
             <Button variant="outline" className="border-stone-700">
-              Export Profile
+              Exporter Profil
             </Button>
             <Button variant="outline" className="border-stone-700 text-red-400">
-              Blacklist Guest
+              Blacklister Client
             </Button>
           </div>
         </CardContent>

@@ -83,8 +83,8 @@ export default function InvoicesPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Invoices"
-        description="Manage supplier invoices and payments"
+        title="Factures"
+        description="Gérer les factures fournisseurs et les paiements"
       />
 
       {/* Summary Cards */}
@@ -93,7 +93,7 @@ export default function InvoicesPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Total Outstanding</p>
+                <p className="text-sm text-stone-400 mb-1">Total En Attente</p>
                 <p className="text-3xl font-semibold text-yellow-400">
                   {(pending + overdue).toLocaleString()}
                 </p>
@@ -106,7 +106,7 @@ export default function InvoicesPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Overdue Amount</p>
+              <p className="text-sm text-stone-400 mb-1">Montant En Retard</p>
               <p className="text-3xl font-semibold text-red-400">
                 {overdue.toLocaleString()}
               </p>
@@ -117,7 +117,7 @@ export default function InvoicesPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Total Paid</p>
+              <p className="text-sm text-stone-400 mb-1">Total Payé</p>
               <p className="text-3xl font-semibold text-emerald-400">
                 {paid.toLocaleString()}
               </p>
@@ -128,11 +128,11 @@ export default function InvoicesPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Pending Invoices</p>
+              <p className="text-sm text-stone-400 mb-1">Factures En Attente</p>
               <p className="text-3xl font-semibold text-stone-100">
                 {invoices.filter((inv) => inv.status === "PENDING").length}
               </p>
-              <p className="text-xs text-stone-400 mt-2">invoices</p>
+              <p className="text-xs text-stone-400 mt-2">factures</p>
             </div>
           </CardContent>
         </Card>
@@ -144,26 +144,26 @@ export default function InvoicesPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Invoices
+                Rechercher Factures
               </label>
               <Input
-                placeholder="Search by invoice ID or supplier..."
+                placeholder="Rechercher par numéro de facture ou fournisseur..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <div className="w-full md:w-48">
               <label className="text-sm text-stone-400 block mb-2">
-                Status
+                Statut
               </label>
               <Select defaultValue="all">
                 <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-800 border-stone-700">
-                  <SelectItem value="all">All</SelectItem>
-                  <SelectItem value="pending">Pending</SelectItem>
-                  <SelectItem value="overdue">Overdue</SelectItem>
-                  <SelectItem value="paid">Paid</SelectItem>
+                  <SelectItem value="all">Tous</SelectItem>
+                  <SelectItem value="pending">En Attente</SelectItem>
+                  <SelectItem value="overdue">En Retard</SelectItem>
+                  <SelectItem value="paid">Payé</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -174,19 +174,19 @@ export default function InvoicesPage() {
       {/* Invoices Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">All Invoices</CardTitle>
+          <CardTitle className="text-stone-100">Toutes les Factures</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Invoice</TableHead>
-                  <TableHead className="text-stone-400">Supplier</TableHead>
-                  <TableHead className="text-stone-400">Amount</TableHead>
+                  <TableHead className="text-stone-400">Facture</TableHead>
+                  <TableHead className="text-stone-400">Fournisseur</TableHead>
+                  <TableHead className="text-stone-400">Montant</TableHead>
                   <TableHead className="text-stone-400">Date</TableHead>
-                  <TableHead className="text-stone-400">Due Date</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
+                  <TableHead className="text-stone-400">Date d&apos;Échéance</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -219,7 +219,7 @@ export default function InvoicesPage() {
                           size="sm"
                           className="text-amber-400 hover:text-amber-300"
                         >
-                          View
+                          Voir
                         </Button>
                         {invoice.status !== "PAID" && (
                           <Button
@@ -227,7 +227,7 @@ export default function InvoicesPage() {
                             size="sm"
                             className="text-emerald-400 hover:text-emerald-300"
                           >
-                            Pay
+                            Payer
                           </Button>
                         )}
                       </div>

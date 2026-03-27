@@ -10,12 +10,12 @@ import { Calendar, Clock, Users, MapPin, ChevronRight, Star, Music, Sparkles } f
 const upcomingEvents = [
   {
     id: 1,
-    title: "Omakase Night — Chef&apos;s Table Experience",
+    title: "Soirée Omakase — Expérience du Comptoir du Chef",
     date: "15 Avril 2026",
     time: "19:30",
-    capacity: "8 guests",
+    capacity: "8 invités",
     category: "Omakase",
-    price: "2,800 MAD / personne",
+    price: "2 800 MAD / personne",
     description:
       "Une soirée intime au comptoir du chef, où Chef Takashi Moretti guide chaque convive à travers 14 plats signature en direct. Accord mets-saké japonais inclus.",
     highlights: ["14 plats signature", "Accord saké premium", "Interaction directe avec le chef"],
@@ -27,9 +27,9 @@ const upcomingEvents = [
     title: "Soirée Wagyu & Barolo",
     date: "22 Avril 2026",
     time: "20:00",
-    capacity: "40 guests",
-    category: "Wine Dinner",
-    price: "1,950 MAD / personne",
+    capacity: "40 invités",
+    category: "Dîner Vin",
+    price: "1 950 MAD / personne",
     description:
       "Une soirée dédiée au wagyu A5 de Kagoshima et au grand Barolo italien. Cinq services, cinq accords, une harmonie parfaite entre deux terroirs d&apos;exception.",
     highlights: ["Wagyu A5 Kagoshima", "Barolo DOCG millésimés", "5 services exclusifs"],
@@ -38,11 +38,11 @@ const upcomingEvents = [
   },
   {
     id: 3,
-    title: "Sunset Terrace — Soirée Privée",
+    title: "Coucher de Soleil sur la Terrasse — Soirée Privée",
     date: "1 Mai 2026",
     time: "18:00",
-    capacity: "40 guests",
-    category: "Terrace Event",
+    capacity: "40 invités",
+    category: "Événement Terrasse",
     price: "Sur devis",
     description:
       "Privatisation exclusive de la terrasse panoramique pour vos événements d&apos;entreprise, anniversaires ou célébrations privées. Vue sur la Méditerranée, menu personnalisé.",
@@ -55,7 +55,7 @@ const upcomingEvents = [
     title: "Cours de Sushi — Atelier Master Class",
     date: "8 Mai 2026",
     time: "15:00",
-    capacity: "12 guests",
+    capacity: "12 invités",
     category: "Atelier",
     price: "850 MAD / personne",
     description:
@@ -69,9 +69,9 @@ const upcomingEvents = [
     title: "Soirée Jazz & Fusion Italienne",
     date: "15 Mai 2026",
     time: "20:30",
-    capacity: "80 guests",
+    capacity: "80 invités",
     category: "Soirée Musicale",
-    price: "1,200 MAD / personne",
+    price: "1 200 MAD / personne",
     description:
       "Le Quatuor Marco Ferri rencontre la cuisine de Chef Moretti. Une soirée où la musique jazz et la gastronomie fusion se répondent en parfaite harmonie.",
     highlights: ["Quartet jazz live", "Menu 6 services", "Champagne d&apos;accueil"],
@@ -80,12 +80,12 @@ const upcomingEvents = [
   },
   {
     id: 6,
-    title: "Iftar de Prestige — Ramadan Edition",
+    title: "Iftar de Prestige — Édition Ramadan",
     date: "Dates sur demande",
     time: "Au coucher du soleil",
-    capacity: "120 guests",
+    capacity: "120 invités",
     category: "Saisonnier",
-    price: "à partir de 1,600 MAD / personne",
+    price: "à partir de 1 600 MAD / personne",
     description:
       "Une rupture du jeûne raffinée alliant les saveurs marocaines traditionnelles à l&apos;élégance de la fusion 2R. Privatisation complète du restaurant disponible.",
     highlights: ["Fusion maroco-japonaise", "Privatisation possible", "Menu traditionnel revisité"],
@@ -94,14 +94,14 @@ const upcomingEvents = [
   },
 ];
 
-const categories = ["Tous", "Omakase", "Wine Dinner", "Atelier", "Soirée Musicale", "Terrace Event", "Saisonnier"];
+const categories = ["Tous", "Omakase", "Dîner Vin", "Atelier", "Soirée Musicale", "Événement Terrasse", "Saisonnier"];
 
 const categoryColors: Record<string, string> = {
   Omakase: "bg-amber-900/30 text-amber-300 border-amber-500/30",
-  "Wine Dinner": "bg-red-900/30 text-red-300 border-red-500/30",
+  "Dîner Vin": "bg-red-900/30 text-red-300 border-red-500/30",
   Atelier: "bg-blue-900/30 text-blue-300 border-blue-500/30",
   "Soirée Musicale": "bg-purple-900/30 text-purple-300 border-purple-500/30",
-  "Terrace Event": "bg-orange-900/30 text-orange-300 border-orange-500/30",
+  "Événement Terrasse": "bg-orange-900/30 text-orange-300 border-orange-500/30",
   Saisonnier: "bg-green-900/30 text-green-300 border-green-500/30",
 };
 
@@ -300,7 +300,7 @@ export default function EventsPage() {
                 {[
                   { icon: Users, label: "Jusqu&apos;à 150 couverts", sub: "Capacité totale" },
                   { icon: MapPin, label: "4 espaces", sub: "Salle, terrasse, salon, comptoir" },
-                  { icon: Music, label: "DJ & live music", sub: "Sur demande" },
+                  { icon: Music, label: "DJ & musique live", sub: "Sur demande" },
                   { icon: Star, label: "Menu sur-mesure", sub: "Par Chef Moretti" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3 p-4 bg-stone-900 rounded-lg border border-stone-800">

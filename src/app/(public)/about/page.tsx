@@ -8,38 +8,38 @@ import { Star, Heart, Flame, Globe, Users } from "lucide-react";
 const philosophy = [
   {
     icon: Flame,
-    title: "Culinary Precision",
-    desc: "Every dish is a study in balance — Japanese technique meeting Italian soul, executed with meticulous attention to temperature, timing, and texture.",
+    title: "Précision Culinaire",
+    desc: "Chaque plat est une étude d&apos;équilibre — la technique japonaise rencontre l&apos;âme italienne, exécutée avec une attention minutieuse à la température, au timing et à la texture.",
   },
   {
     icon: Star,
-    title: "Premium Sourcing",
-    desc: "From Mediterranean bluefin tuna to A5 wagyu, from Sicilian capers to Hokkaido uni — we source only what meets our uncompromising standard.",
+    title: "Sourcing Premium",
+    desc: "Du thon bleu méditerranéen au wagyu A5, des câpres siciliens à l&apos;uni de Hokkaido — nous n&apos;approvisionnons que les ingrédients qui répondent à notre standard intraitable.",
   },
   {
     icon: Heart,
-    title: "Guest Experience",
-    desc: "Hospitality is not a service, it is an art. Every guest is recognized, every preference remembered, every moment curated for lasting impression.",
+    title: "Expérience Clientèle",
+    desc: "L&apos;hospitalité n&apos;est pas un service, c&apos;est un art. Chaque client est reconnu, chaque préférence mémorisée, chaque moment orchestré pour laisser une impression durable.",
   },
   {
     icon: Globe,
     title: "Innovation",
-    desc: "Tradition is our foundation, not our ceiling. We push the boundaries of fusion cuisine while respecting the heritage of two great culinary traditions.",
+    desc: "La tradition est notre fondation, non notre plafond. Nous repoussons les limites de la cuisine fusion tout en respectant l&apos;héritage de deux grandes traditions culinaires.",
   },
 ];
 
 const spaces = [
-  { name: "Main Dining Room", capacity: "80 covers", desc: "Panoramic ocean views, warm stone accents, ambient lighting" },
-  { name: "Rooftop Terrace", capacity: "40 covers", desc: "Open-air dining with Mediterranean sunset vistas" },
-  { name: "Private Dining Rooms", capacity: "8-20 covers", desc: "Intimate spaces for celebrations and business" },
-  { name: "Chef&apos;s Counter", capacity: "8 seats", desc: "Front-row omakase experience with the head chef" },
+  { name: "Salle Principale", capacity: "80 couverts", desc: "Vue panoramique océan, accents de pierre chaude, éclairage ambiant" },
+  { name: "Terrasse sur le Toit", capacity: "40 couverts", desc: "Dîner en plein air avec vues sur le coucher de soleil méditerranéen" },
+  { name: "Salons Privatisés", capacity: "8-20 couverts", desc: "Espaces intimes pour célébrations et réunions d&apos;affaires" },
+  { name: "Comptoir du Chef", capacity: "8 places", desc: "Expérience omakase première loge avec le chef exécutif" },
 ];
 
 const team = [
-  { role: "Executive Chef", name: "Chef Takashi Moretti", desc: "Trained in Tokyo and Naples, 15 years of fusion mastery" },
-  { role: "Pastry Chef", name: "Chef Amina Rossi", desc: "Award-winning desserts blending wagashi and Italian dolci" },
-  { role: "Head Sommelier", name: "Youssef Marchetti", desc: "Curating pairings from Moroccan, Italian, and Japanese vineyards" },
-  { role: "General Manager", name: "Karim El-Fassi", desc: "Luxury hospitality veteran, formerly at Four Seasons Marrakech" },
+  { role: "Chef Exécutif", name: "Chef Takashi Moretti", desc: "Formé à Tokyo et Naples, 15 ans de maîtrise en fusion" },
+  { role: "Chef Pâtissier", name: "Chef Amina Rossi", desc: "Desserts primés alliant wagashi et dolci italiens" },
+  { role: "Chef Sommelier", name: "Youssef Marchetti", desc: "Accords savants des vignobles marocains, italiens et japonais" },
+  { role: "Directeur Général", name: "Karim El-Fassi", desc: "Vétéran de l&apos;hôtellerie de luxe, ancien Four Seasons Marrakech" },
 ];
 
 export default function AboutPage() {
@@ -50,14 +50,14 @@ export default function AboutPage() {
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-amber-700/5 rounded-full blur-3xl" />
         <div className="container-premium text-center space-y-8 relative z-10 animate-fade-in">
-          <p className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Our Story</p>
+          <p className="text-amber-400 tracking-[0.3em] uppercase text-sm font-medium">Notre Histoire</p>
           <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight">
-            The Art of<br />
+            L&apos;Art de la<br />
             <span className="text-amber-400">Confluence</span>
           </h1>
           <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto" />
           <p className="text-lg md:text-xl text-stone-300 max-w-3xl mx-auto leading-relaxed">
-            Where the ancient art of Japanese cuisine meets the passionate soul of Italian cooking — born on the golden shores of Tangier.
+            Où l&apos;art ancien de la cuisine japonaise rencontre l&apos;âme passionnée de la cuisine italienne — née sur les rivages dorés de Tanger.
           </p>
         </div>
       </section>
@@ -67,24 +67,24 @@ export default function AboutPage() {
         <div className="container-premium">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">The Beginning</p>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold">A Vision Born at the Crossroads</h2>
+              <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">Le Commencement</p>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold">Une Vision Née aux Carrefours</h2>
               <div className="h-1 w-12 bg-gradient-to-r from-amber-500 to-amber-700" />
               <p className="text-stone-300 leading-relaxed">
-                2R Fusion was born from a simple yet audacious idea: what happens when two of the world&apos;s greatest culinary traditions meet on the shores of Africa&apos;s gateway to Europe?
+                2R Fusion est né d&apos;une idée simple mais audacieuse : que se passe-t-il quand deux des plus grandes traditions culinaires mondiales se rencontrent sur les rivages de la porte africaine vers l&apos;Europe ?
               </p>
               <p className="text-stone-400 leading-relaxed">
-                Tangier has always been a city of confluence — where continents meet, cultures merge, and the extraordinary becomes ordinary. Our founders saw in this spirit the perfect stage for a restaurant that would redefine dining in Morocco.
+                Tanger a toujours été une ville de confluence — où les continents se rencontrent, les cultures se fusionnent, et l&apos;extraordinaire devient ordinaire. Nos fondateurs y ont vu l&apos;étape parfaite pour un restaurant qui redéfinirait la gastronomie au Maroc.
               </p>
               <p className="text-stone-400 leading-relaxed">
-                Built as a family legacy, 2R Fusion carries the ambition of two generations. The precision of a father&apos;s business acumen paired with a son&apos;s passion for innovation — creating something that is both timeless and forward-looking.
+                Bâti comme un héritage familial, 2R Fusion porte l&apos;ambition de deux générations. La précision de l&apos;acumen commercial d&apos;un père associée à la passion d&apos;un fils pour l&apos;innovation — créant quelque chose à la fois intemporel et avant-gardiste.
               </p>
             </div>
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-stone-800 via-stone-900 to-amber-900/20 border border-stone-700 flex items-center justify-center">
                 <div className="text-center space-y-3">
                   <p className="text-6xl font-heading font-bold text-amber-400/30">2R</p>
-                  <p className="text-stone-500 text-sm tracking-widest uppercase">Est. 2026</p>
+                  <p className="text-stone-500 text-sm tracking-widest uppercase">Fondé 2026</p>
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-amber-500/10 rounded-full blur-xl" />
@@ -97,8 +97,8 @@ export default function AboutPage() {
       <section className="section-spacing border-b border-stone-800 bg-stone-900/50">
         <div className="container-premium space-y-12">
           <div className="text-center space-y-4">
-            <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">Our Philosophy</p>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">Four Pillars of Excellence</h2>
+            <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">Notre Philosophie</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold">Quatre Piliers d&apos;Excellence</h2>
             <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -119,11 +119,11 @@ export default function AboutPage() {
       <section className="section-spacing border-b border-stone-800">
         <div className="container-premium space-y-12">
           <div className="text-center space-y-4">
-            <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">The Venue</p>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">A Beachfront Masterpiece</h2>
+            <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">Le Lieu</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold">Un Chef-d&apos;œuvre en Bord de Mer</h2>
             <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto" />
             <p className="text-stone-300 max-w-2xl mx-auto">
-              Perched on Tangier&apos;s golden coastline, our venue is designed to immerse you in a world where every detail — from the ocean breeze to the ambient stone textures — elevates your dining experience.
+              Perché sur le littoral doré de Tanger, notre restaurant est conçu pour vous immerger dans un monde où chaque détail — de la brise océanique aux textures de pierre ambiante — élève votre expérience gastronomique.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -146,8 +146,8 @@ export default function AboutPage() {
       <section className="section-spacing border-b border-stone-800 bg-stone-900/50">
         <div className="container-premium space-y-12">
           <div className="text-center space-y-4">
-            <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">The Team</p>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold">Masters of Their Craft</h2>
+            <p className="text-amber-400 tracking-[0.2em] uppercase text-sm font-medium">L&apos;Équipe</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold">Maîtres de leur Métier</h2>
             <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-amber-700 mx-auto" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -170,13 +170,13 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="section-spacing">
         <div className="container-premium text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold">Experience the Confluence</h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold">Vivez la Confluence</h2>
           <p className="text-stone-300 max-w-xl mx-auto">
-            Reserve your table and discover a dining experience unlike anything Tangier has ever seen.
+            Réservez votre table et découvrez une expérience gastronomique sans équivalent à Tanger.
           </p>
           <Link href="/book">
             <Button className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-6 text-lg">
-              Reserve Your Table
+              Réservez Votre Table
             </Button>
           </Link>
         </div>

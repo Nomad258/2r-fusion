@@ -30,7 +30,7 @@ const supplierData = {
   reliabilityScore: 98,
   isActive: true,
   isPreferred: true,
-  notes: "Premium supplier with excellent consistency",
+  notes: "Fournisseur premium avec excellente cohérence",
 };
 
 const productsSupplied = [
@@ -135,7 +135,7 @@ export default function SupplierDetailPage({
     <div className="space-y-6">
       <PageHeader
         title={supplierData.name}
-        description="Supplier details and performance metrics"
+        description="Détails fournisseur et métriques de performance"
       />
 
       {/* Supplier Info Card */}
@@ -143,8 +143,8 @@ export default function SupplierDetailPage({
         <CardHeader>
           <div className="flex items-start justify-between">
             <div>
-              <CardTitle className="text-stone-100">Supplier Information</CardTitle>
-              <p className="text-xs text-stone-400 mt-1">Contact details and terms</p>
+              <CardTitle className="text-stone-100">Informations Fournisseur</CardTitle>
+              <p className="text-xs text-stone-400 mt-1">Détails contact et conditions</p>
             </div>
             <Badge
               className={
@@ -153,7 +153,7 @@ export default function SupplierDetailPage({
                   : "bg-red-900/30 text-red-200"
               }
             >
-              {supplierData.isActive ? "ACTIVE" : "INACTIVE"}
+              {supplierData.isActive ? "ACTIF" : "INACTIF"}
             </Badge>
           </div>
         </CardHeader>
@@ -161,12 +161,12 @@ export default function SupplierDetailPage({
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-stone-400 mb-1">Contact Name</p>
+                <p className="text-xs text-stone-400 mb-1">Nom du Contact</p>
                 <p className="text-stone-100 font-medium">{supplierData.contact}</p>
               </div>
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> Phone
+                  <Phone className="h-4 w-4" /> Téléphone
                 </p>
                 <p className="text-stone-100">{supplierData.phone}</p>
               </div>
@@ -180,13 +180,13 @@ export default function SupplierDetailPage({
             <div className="space-y-4">
               <div>
                 <p className="text-xs text-stone-400 mb-1 flex items-center gap-2">
-                  <MapPin className="h-4 w-4" /> Address
+                  <MapPin className="h-4 w-4" /> Adresse
                 </p>
                 <p className="text-stone-100">{supplierData.address}</p>
                 <p className="text-sm text-stone-400">{supplierData.city}</p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Tax ID</p>
+                <p className="text-xs text-stone-400 mb-1">Numéro de TVA</p>
                 <p className="text-stone-100 font-mono text-sm">
                   {supplierData.taxId}
                 </p>
@@ -197,21 +197,21 @@ export default function SupplierDetailPage({
           <div className="border-t border-stone-700 pt-4">
             <div className="grid gap-4 md:grid-cols-3">
               <div>
-                <p className="text-xs text-stone-400 mb-1">Payment Terms</p>
+                <p className="text-xs text-stone-400 mb-1">Conditions de Paiement</p>
                 <p className="text-stone-100 font-medium">
                   {supplierData.paymentTerms}
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Delivery Days</p>
+                <p className="text-xs text-stone-400 mb-1">Jours de Livraison</p>
                 <p className="text-stone-100 font-medium">
                   {supplierData.deliveryDays}
                 </p>
               </div>
               <div>
-                <p className="text-xs text-stone-400 mb-1">Lead Time</p>
+                <p className="text-xs text-stone-400 mb-1">Délai de Livraison</p>
                 <p className="text-stone-100 font-medium">
-                  {supplierData.leadTimeDays} days
+                  {supplierData.leadTimeDays} jours
                 </p>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default function SupplierDetailPage({
 
           {supplierData.notes && (
             <div className="bg-stone-800/50 border border-stone-700 rounded p-3">
-              <p className="text-xs text-stone-400 mb-1">Notes</p>
+              <p className="text-xs text-stone-400 mb-1">Remarques</p>
               <p className="text-stone-100 text-sm">{supplierData.notes}</p>
             </div>
           )}
@@ -232,7 +232,7 @@ export default function SupplierDetailPage({
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-xs text-stone-400 mb-1">Rating</p>
+                <p className="text-xs text-stone-400 mb-1">Note</p>
                 <div className="flex items-center gap-1">
                   <Star className="h-5 w-5 text-amber-400 fill-amber-400" />
                   <p className="text-2xl font-semibold text-stone-100">
@@ -246,7 +246,7 @@ export default function SupplierDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Reliability</p>
+              <p className="text-xs text-stone-400 mb-1">Fiabilité</p>
               <p className="text-2xl font-semibold text-emerald-400">
                 {supplierData.reliabilityScore}%
               </p>
@@ -256,7 +256,7 @@ export default function SupplierDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">On-Time Rate</p>
+              <p className="text-xs text-stone-400 mb-1">Taux de Ponctualité</p>
               <p className="text-2xl font-semibold text-emerald-400">
                 {onTimeRate}%
               </p>
@@ -266,7 +266,7 @@ export default function SupplierDetailPage({
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-xs text-stone-400 mb-1">Quality Score</p>
+              <p className="text-xs text-stone-400 mb-1">Score de Qualité</p>
               <p className="text-2xl font-semibold text-amber-400">
                 {avgQuality.toFixed(1)}
               </p>
@@ -280,7 +280,7 @@ export default function SupplierDetailPage({
         <CardHeader>
           <CardTitle className="text-stone-100 flex items-center gap-2">
             <Package className="h-5 w-5" />
-            Products Supplied
+            Produits Fournis
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -288,12 +288,12 @@ export default function SupplierDetailPage({
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Product Name</TableHead>
+                  <TableHead className="text-stone-400">Nom du Produit</TableHead>
                   <TableHead className="text-stone-400">SKU</TableHead>
-                  <TableHead className="text-stone-400">Unit Price</TableHead>
-                  <TableHead className="text-stone-400">Min Order</TableHead>
-                  <TableHead className="text-stone-400">Lead Time</TableHead>
-                  <TableHead className="text-stone-400">Last Ordered</TableHead>
+                  <TableHead className="text-stone-400">Prix Unitaire</TableHead>
+                  <TableHead className="text-stone-400">Commande Min</TableHead>
+                  <TableHead className="text-stone-400">Délai de Livraison</TableHead>
+                  <TableHead className="text-stone-400">Dernière Commande</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -312,10 +312,10 @@ export default function SupplierDetailPage({
                       {product.unitPrice.toFixed(2)} MAD
                     </TableCell>
                     <TableCell className="text-stone-400">
-                      {product.minOrderQty} units
+                      {product.minOrderQty} unités
                     </TableCell>
                     <TableCell className="text-stone-400">
-                      {product.leadTimeDays} day(s)
+                      {product.leadTimeDays} jour(s)
                     </TableCell>
                     <TableCell className="text-stone-400">
                       {product.lastOrdered}
@@ -331,19 +331,19 @@ export default function SupplierDetailPage({
       {/* Purchase Orders */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Recent Purchase Orders</CardTitle>
+          <CardTitle className="text-stone-100">Commandes d&apos;Achat Récentes</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Order Number</TableHead>
+                  <TableHead className="text-stone-400">Numéro de Commande</TableHead>
                   <TableHead className="text-stone-400">Date</TableHead>
-                  <TableHead className="text-stone-400">Items</TableHead>
+                  <TableHead className="text-stone-400">Articles</TableHead>
                   <TableHead className="text-stone-400">Total</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
-                  <TableHead className="text-stone-400">Expected Date</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
+                  <TableHead className="text-stone-400">Date Attendue</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -377,19 +377,19 @@ export default function SupplierDetailPage({
       {/* Delivery History */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">Delivery History</CardTitle>
+          <CardTitle className="text-stone-100">Historique des Livraisons</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Delivery #</TableHead>
+                  <TableHead className="text-stone-400">Livraison #</TableHead>
                   <TableHead className="text-stone-400">Date</TableHead>
-                  <TableHead className="text-stone-400">Items</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
-                  <TableHead className="text-stone-400">Quality Notes</TableHead>
-                  <TableHead className="text-stone-400">On Time</TableHead>
+                  <TableHead className="text-stone-400">Articles</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
+                  <TableHead className="text-stone-400">Remarques Qualité</TableHead>
+                  <TableHead className="text-stone-400">À l&apos;Heure</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -417,7 +417,7 @@ export default function SupplierDetailPage({
                             : "bg-red-900/30 text-red-200"
                         }
                       >
-                        {!delivery.isLate ? "Yes" : "Late"}
+                        {!delivery.isLate ? "Oui" : "En Retard"}
                       </Badge>
                     </TableCell>
                   </TableRow>
@@ -430,18 +430,18 @@ export default function SupplierDetailPage({
 
       {/* Action Buttons */}
       <div className="flex gap-3 pt-4">
-        <Button className="bg-amber-600 hover:bg-amber-700">Edit Supplier</Button>
+        <Button className="bg-amber-600 hover:bg-amber-700">Modifier Fournisseur</Button>
         <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-          View All Invoices
+          Voir Toutes les Factures
         </Button>
         <Button variant="outline" className="border-stone-700 text-amber-400 hover:bg-stone-800">
-          Create Purchase Order
+          Créer Commande d&apos;Achat
         </Button>
         <Button
           variant="outline"
           className="border-red-900 text-red-400 hover:bg-red-900/20"
         >
-          Deactivate Supplier
+          Désactiver Fournisseur
         </Button>
       </div>
     </div>

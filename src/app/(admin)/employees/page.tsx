@@ -29,57 +29,57 @@ const employees = [
     id: 1,
     name: "Ahmed Bennani",
     role: "Chef de Cuisine",
-    department: "Kitchen",
+    department: "Cuisine",
     status: "ACTIVE",
     hireDate: "2023-01-15",
-    nextShift: "Today 15:00",
+    nextShift: "Aujourd&apos;hui 15:00",
     anomalies: 0,
   },
   {
     id: 2,
     name: "Fatima Al-Ansari",
     role: "Sous Chef",
-    department: "Kitchen",
+    department: "Cuisine",
     status: "ACTIVE",
     hireDate: "2023-03-20",
-    nextShift: "Today 18:00",
+    nextShift: "Aujourd&apos;hui 18:00",
     anomalies: 0,
   },
   {
     id: 3,
     name: "Mohammad Khaldi",
-    role: "Restaurant Manager",
-    department: "Management",
+    role: "Directeur du Restaurant",
+    department: "Gestion",
     status: "ACTIVE",
     hireDate: "2022-11-10",
-    nextShift: "Today 10:00",
+    nextShift: "Aujourd&apos;hui 10:00",
     anomalies: 0,
   },
   {
     id: 4,
     name: "Layla Ouhammou",
-    role: "Server",
+    role: "Serveur",
     department: "Service",
     status: "ACTIVE",
     hireDate: "2024-02-14",
-    nextShift: "Today 18:30",
+    nextShift: "Aujourd&apos;hui 18:30",
     anomalies: 1,
   },
   {
     id: 5,
     name: "Hassan Rami",
-    role: "Bartender",
+    role: "Barman",
     department: "Bar",
     status: "ACTIVE",
     hireDate: "2023-06-01",
-    nextShift: "Today 19:00",
+    nextShift: "Aujourd&apos;hui 19:00",
     anomalies: 2,
   },
   {
     id: 6,
     name: "Nadia Saadi",
-    role: "Cashier",
-    department: "Front Desk",
+    role: "Caissier",
+    department: "Accueil",
     status: "ON_LEAVE",
     hireDate: "2024-01-05",
     nextShift: "2026-04-01",
@@ -94,8 +94,8 @@ export default function EmployeesPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Employees"
-        description="Manage staff and monitor performance"
+        title="Employés"
+        description="Gérer le personnel et surveiller les performances"
       />
 
       {/* Summary Cards */}
@@ -104,7 +104,7 @@ export default function EmployeesPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Total Staff</p>
+                <p className="text-sm text-stone-400 mb-1">Personnel Total</p>
                 <p className="text-3xl font-semibold text-stone-100">
                   {employees.length}
                 </p>
@@ -116,11 +116,11 @@ export default function EmployeesPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Active Staff</p>
+              <p className="text-sm text-stone-400 mb-1">Personnel Actif</p>
               <p className="text-3xl font-semibold text-emerald-400">
                 {activeCount}
               </p>
-              <p className="text-xs text-stone-400 mt-2">on duty</p>
+              <p className="text-xs text-stone-400 mt-2">en service</p>
             </div>
           </CardContent>
         </Card>
@@ -131,16 +131,16 @@ export default function EmployeesPage() {
               <p className="text-3xl font-semibold text-red-400">
                 {anomalyCount}
               </p>
-              <p className="text-xs text-stone-400 mt-2">flagged</p>
+              <p className="text-xs text-stone-400 mt-2">signalées</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Departments</p>
+              <p className="text-sm text-stone-400 mb-1">Départements</p>
               <p className="text-3xl font-semibold text-stone-100">5</p>
-              <p className="text-xs text-stone-400 mt-2">teams</p>
+              <p className="text-xs text-stone-400 mt-2">équipes</p>
             </div>
           </CardContent>
         </Card>
@@ -152,32 +152,32 @@ export default function EmployeesPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Employees
+                Rechercher Employés
               </label>
               <Input
-                placeholder="Search by name..."
+                placeholder="Rechercher par nom..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <div className="w-full md:w-48">
               <label className="text-sm text-stone-400 block mb-2">
-                Department
+                Département
               </label>
               <Select defaultValue="all">
                 <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-800 border-stone-700">
-                  <SelectItem value="all">All</SelectItem>
-                  <SelectItem value="kitchen">Kitchen</SelectItem>
+                  <SelectItem value="all">Tous</SelectItem>
+                  <SelectItem value="kitchen">Cuisine</SelectItem>
                   <SelectItem value="service">Service</SelectItem>
                   <SelectItem value="bar">Bar</SelectItem>
-                  <SelectItem value="management">Management</SelectItem>
+                  <SelectItem value="management">Gestion</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              + Add Employee
+              + Ajouter Employé
             </Button>
           </div>
         </CardContent>
@@ -186,18 +186,18 @@ export default function EmployeesPage() {
       {/* Employees Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">All Employees</CardTitle>
+          <CardTitle className="text-stone-100">Tous les Employés</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Name</TableHead>
-                  <TableHead className="text-stone-400">Role</TableHead>
-                  <TableHead className="text-stone-400">Department</TableHead>
-                  <TableHead className="text-stone-400">Status</TableHead>
-                  <TableHead className="text-stone-400">Next Shift</TableHead>
+                  <TableHead className="text-stone-400">Nom</TableHead>
+                  <TableHead className="text-stone-400">Rôle</TableHead>
+                  <TableHead className="text-stone-400">Département</TableHead>
+                  <TableHead className="text-stone-400">Statut</TableHead>
+                  <TableHead className="text-stone-400">Prochain Quart</TableHead>
                   <TableHead className="text-stone-400">Anomalies</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
@@ -240,7 +240,7 @@ export default function EmployeesPage() {
                         size="sm"
                         className="text-amber-400 hover:text-amber-300"
                       >
-                        View
+                        Voir
                       </Button>
                     </TableCell>
                   </TableRow>

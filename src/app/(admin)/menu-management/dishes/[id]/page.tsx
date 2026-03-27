@@ -57,7 +57,7 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
       <div className="grid gap-6 md:grid-cols-3">
         <Card className="bg-stone-900 border-stone-800 md:col-span-2">
           <CardHeader>
-            <CardTitle className="text-stone-100">Dish Information</CardTitle>
+            <CardTitle className="text-stone-100">Informations Plat</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
@@ -67,7 +67,7 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
 
             {/* Tags */}
             <div>
-              <p className="text-sm text-stone-400 mb-3">Tags</p>
+              <p className="text-sm text-stone-400 mb-3">Étiquettes</p>
               <div className="flex flex-wrap gap-2">
                 {dishData.tags.map((tag) => (
                   <Badge
@@ -82,7 +82,7 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
 
             {/* Allergens */}
             <div>
-              <p className="text-sm text-stone-400 mb-3">Allergens</p>
+              <p className="text-sm text-stone-400 mb-3">Allergènes</p>
               <div className="flex flex-wrap gap-2">
                 {dishData.allergens.map((allergen) => (
                   <Badge
@@ -100,32 +100,32 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
         {/* Cost Analysis */}
         <Card className="bg-stone-900 border-stone-800">
           <CardHeader>
-            <CardTitle className="text-stone-100">Cost Analysis</CardTitle>
+            <CardTitle className="text-stone-100">Analyse Coûts</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <p className="text-sm text-stone-400">Selling Price</p>
+              <p className="text-sm text-stone-400">Prix Vente</p>
               <p className="text-3xl font-semibold text-stone-100">
                 {dishData.price}
               </p>
               <p className="text-xs text-stone-400">MAD</p>
             </div>
             <div>
-              <p className="text-sm text-stone-400">Cost Price</p>
+              <p className="text-sm text-stone-400">Coût Prix</p>
               <p className="text-2xl font-semibold text-stone-100">
                 {dishData.recipe.ingredients.reduce((sum, i) => sum + i.cost, 0)}
               </p>
               <p className="text-xs text-stone-400">MAD</p>
             </div>
             <div>
-              <p className="text-sm text-stone-400">Profit</p>
+              <p className="text-sm text-stone-400">Bénéfice</p>
               <p className="text-2xl font-semibold text-emerald-400">
                 {profit}
               </p>
               <p className="text-xs text-stone-400">MAD</p>
             </div>
             <div>
-              <p className="text-sm text-stone-400">Margin</p>
+              <p className="text-sm text-stone-400">Marge</p>
               <p className="text-2xl font-semibold text-amber-400">
                 {margin}%
               </p>
@@ -137,40 +137,40 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
       {/* Recipe Tab */}
       <Tabs defaultValue="recipe" className="space-y-6">
         <TabsList className="bg-stone-800 border-stone-700">
-          <TabsTrigger value="recipe">Recipe & Ingredients</TabsTrigger>
-          <TabsTrigger value="linked">Linked Recipes</TabsTrigger>
+          <TabsTrigger value="recipe">Recette & Ingrédients</TabsTrigger>
+          <TabsTrigger value="linked">Recettes Liées</TabsTrigger>
         </TabsList>
 
         <TabsContent value="recipe">
           <Card className="bg-stone-900 border-stone-800">
             <CardHeader>
-              <CardTitle className="text-stone-100">Recipe Details</CardTitle>
+              <CardTitle className="text-stone-100">Détails Recette</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Prep Info */}
               <div className="grid gap-4 md:grid-cols-4">
                 <div className="p-4 rounded-lg bg-stone-800/50">
-                  <p className="text-sm text-stone-400 mb-1">Prep Time</p>
+                  <p className="text-sm text-stone-400 mb-1">Temps Préparation</p>
                   <p className="text-lg font-semibold text-stone-100">
                     {dishData.recipe.prep_time}
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-stone-800/50">
-                  <p className="text-sm text-stone-400 mb-1">Cook Time</p>
+                  <p className="text-sm text-stone-400 mb-1">Temps Cuisson</p>
                   <p className="text-lg font-semibold text-stone-100">
                     {dishData.recipe.cook_time}
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-stone-800/50">
-                  <p className="text-sm text-stone-400 mb-1">Servings</p>
+                  <p className="text-sm text-stone-400 mb-1">Portions</p>
                   <p className="text-lg font-semibold text-stone-100">
                     {dishData.recipe.servings}
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-stone-800/50">
-                  <p className="text-sm text-stone-400 mb-1">Status</p>
+                  <p className="text-sm text-stone-400 mb-1">Statut</p>
                   <Badge className="bg-emerald-900/30 text-emerald-200">
-                    Available
+                    Disponible
                   </Badge>
                 </div>
               </div>
@@ -178,16 +178,16 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
               {/* Ingredients Table */}
               <div>
                 <h3 className="text-lg font-semibold text-stone-100 mb-4">
-                  Ingredients
+                  Ingrédients
                 </h3>
                 <div className="overflow-x-auto">
                   <Table>
                     <TableHeader>
                       <TableRow className="border-stone-800 hover:bg-transparent">
-                        <TableHead className="text-stone-400">Item</TableHead>
-                        <TableHead className="text-stone-400">Quantity</TableHead>
-                        <TableHead className="text-stone-400">Cost</TableHead>
-                        <TableHead className="text-stone-400">Inventory</TableHead>
+                        <TableHead className="text-stone-400">Article</TableHead>
+                        <TableHead className="text-stone-400">Quantité</TableHead>
+                        <TableHead className="text-stone-400">Coût</TableHead>
+                        <TableHead className="text-stone-400">Inventaire</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -211,7 +211,7 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
                               size="sm"
                               className="text-amber-400 hover:text-amber-300"
                             >
-                              View
+                              Voir
                             </Button>
                           </TableCell>
                         </TableRow>
@@ -227,10 +227,10 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
         <TabsContent value="linked">
           <Card className="bg-stone-900 border-stone-800">
             <CardHeader>
-              <CardTitle className="text-stone-100">Linked Recipes</CardTitle>
+              <CardTitle className="text-stone-100">Recettes Liées</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-stone-400">No linked recipes found.</p>
+              <p className="text-stone-400">Aucune recette liée trouvée.</p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -241,13 +241,13 @@ export default function DishDetailPage({ params }: { params: { id: string } }) {
         <CardContent className="pt-6">
           <div className="flex flex-wrap gap-3">
             <Button className="bg-amber-600 hover:bg-amber-700">
-              Edit Dish
+              Modifier Plat
             </Button>
             <Button variant="outline" className="border-stone-700">
-              Print Recipe
+              Imprimer Recette
             </Button>
             <Button variant="outline" className="border-stone-700">
-              View Sales
+              Voir Ventes
             </Button>
           </div>
         </CardContent>

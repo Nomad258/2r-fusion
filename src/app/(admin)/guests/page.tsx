@@ -136,8 +136,8 @@ export default function GuestsPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Guest Intelligence"
-        description="CRM and customer relationship management"
+        title="Intelligence Clients"
+        description="Gestion de la relation client et CRM"
       />
 
       {/* Summary Cards */}
@@ -146,7 +146,7 @@ export default function GuestsPage() {
           <CardContent className="pt-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm text-stone-400 mb-1">Total Guests</p>
+                <p className="text-sm text-stone-400 mb-1">Total Clients</p>
                 <p className="text-3xl font-semibold text-stone-100">248</p>
               </div>
               <Users className="h-6 w-6 text-amber-400" />
@@ -156,16 +156,16 @@ export default function GuestsPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Premium Members</p>
+              <p className="text-sm text-stone-400 mb-1">Membres Premium</p>
               <p className="text-3xl font-semibold text-stone-100">18</p>
-              <p className="text-xs text-stone-400 mt-2">7.3% of total</p>
+              <p className="text-xs text-stone-400 mt-2">7.3% du total</p>
             </div>
           </CardContent>
         </Card>
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">Avg Spend/Visit</p>
+              <p className="text-sm text-stone-400 mb-1">Dépense Moy/Visite</p>
               <p className="text-3xl font-semibold text-stone-100">620</p>
               <p className="text-xs text-stone-400 mt-2">MAD</p>
             </div>
@@ -174,7 +174,7 @@ export default function GuestsPage() {
         <Card className="bg-stone-900 border-stone-800">
           <CardContent className="pt-6">
             <div>
-              <p className="text-sm text-stone-400 mb-1">This Month Revenue</p>
+              <p className="text-sm text-stone-400 mb-1">Chiffre d&apos;Affaires Mois</p>
               <p className="text-3xl font-semibold text-stone-100">94,500</p>
               <p className="text-xs text-stone-400 mt-2">MAD</p>
             </div>
@@ -188,31 +188,31 @@ export default function GuestsPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end">
             <div className="flex-1">
               <label className="text-sm text-stone-400 block mb-2">
-                Search Guests
+                Rechercher Clients
               </label>
               <Input
-                placeholder="Search by name, email, or phone..."
+                placeholder="Rechercher par nom, email ou téléphone..."
                 className="bg-stone-800 border-stone-700 text-stone-100"
               />
             </div>
             <div className="w-full md:w-48">
-              <label className="text-sm text-stone-400 block mb-2">Tier</label>
+              <label className="text-sm text-stone-400 block mb-2">Catégorie</label>
               <Select defaultValue="all">
                 <SelectTrigger className="bg-stone-800 border-stone-700 text-stone-100">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-800 border-stone-700">
-                  <SelectItem value="all">All Tiers</SelectItem>
+                  <SelectItem value="all">Toutes Catégories</SelectItem>
                   <SelectItem value="whale">Whale</SelectItem>
                   <SelectItem value="premium">Premium</SelectItem>
                   <SelectItem value="vip">VIP</SelectItem>
-                  <SelectItem value="regular">Regular</SelectItem>
-                  <SelectItem value="new">New</SelectItem>
+                  <SelectItem value="regular">Régulier</SelectItem>
+                  <SelectItem value="new">Nouveau</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <Button className="bg-amber-600 hover:bg-amber-700">
-              + Import Guests
+              + Importer Clients
             </Button>
           </div>
         </CardContent>
@@ -221,20 +221,20 @@ export default function GuestsPage() {
       {/* Guests Table */}
       <Card className="bg-stone-900 border-stone-800">
         <CardHeader>
-          <CardTitle className="text-stone-100">All Guests</CardTitle>
+          <CardTitle className="text-stone-100">Tous les Clients</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="border-stone-800 hover:bg-transparent">
-                  <TableHead className="text-stone-400">Name</TableHead>
+                  <TableHead className="text-stone-400">Nom</TableHead>
                   <TableHead className="text-stone-400">Contact</TableHead>
-                  <TableHead className="text-stone-400">Tier</TableHead>
-                  <TableHead className="text-stone-400">Visits</TableHead>
-                  <TableHead className="text-stone-400">Total Spent</TableHead>
-                  <TableHead className="text-stone-400">Avg Spend</TableHead>
-                  <TableHead className="text-stone-400">Tags</TableHead>
+                  <TableHead className="text-stone-400">Catégorie</TableHead>
+                  <TableHead className="text-stone-400">Visites</TableHead>
+                  <TableHead className="text-stone-400">Total Dépensé</TableHead>
+                  <TableHead className="text-stone-400">Dépense Moy</TableHead>
+                  <TableHead className="text-stone-400">Étiquettes</TableHead>
                   <TableHead className="text-stone-400">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -297,7 +297,7 @@ export default function GuestsPage() {
                         className="text-amber-400 hover:text-amber-300"
                         asChild
                       >
-                        <Link href={`/admin/guests/${guest.id}`}>View</Link>
+                        <Link href={`/admin/guests/${guest.id}`}>Voir</Link>
                       </Button>
                     </TableCell>
                   </TableRow>

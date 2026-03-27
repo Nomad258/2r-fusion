@@ -22,10 +22,10 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Menu", href: "/menu" },
-    { label: "About", href: "/about" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Events", href: "/events" },
-    { label: "Private Dining", href: "/private-dining" },
+    { label: "À Propos", href: "/about" },
+    { label: "Galerie", href: "/gallery" },
+    { label: "Événements", href: "/events" },
+    { label: "Privatisation", href: "/private-dining" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -70,7 +70,7 @@ export function Navbar() {
             href="/book"
             className="btn-outline text-xs md:text-sm px-4 md:px-6"
           >
-            Reserve Table
+            Réserver
           </Link>
         </div>
 
@@ -102,7 +102,7 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
               className="block btn-gold text-xs text-center py-3 rounded-lg"
             >
-              Reserve Table
+              Réserver
             </Link>
           </div>
         </div>
